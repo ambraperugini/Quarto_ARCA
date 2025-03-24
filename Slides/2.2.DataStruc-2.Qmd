@@ -1,0 +1,374 @@
+---
+title: "Data Structures (part 2)"
+subtitle: "<b><em>Dataframes</em></b>"
+author: "Enrico Toffalini"
+include-in-header: ../assets/slidesheader.html
+format:
+  revealjs:
+    code-line-numbers: false
+    css: custom.css
+    theme: default
+    slide-number: c/t
+    self-contained: true
+    code-fold: false
+    code-summary: "Show code"
+    code-overflow: wrap
+    title-slide-attributes: 
+     data-background-image: "figures/psicostatLogo.png"
+     data-background-size: "contain"
+     data-background-opacity: "0.15"
+execute:
+  echo: true
+  output: true
+---
+## 
+### A type of data structure you are already familiar with
+
+<div style="text-align: center;">
+  <img src="figures/Courses40Cycle.png"/>
+</div>
+
+##
+### A type of data structure you are already familiar with
+
+here is how I would import it in R (<a href="data/Courses40Cycle.xlsx" download>download here</a>), and display the first few rows:
+
+```{r}
+library(readxl)
+df = data.frame(read_excel("data/Courses40Cycle.xlsx"))
+head(df)
+```
+
+## 
+### Dataframes as collections of vectors
+
+In fact, **dataframes** are just collections (lists) of **vectors of different types**, all with the same length. Each column in a dataframe is a vector (a variable):
+
+```{r}
+df$Teacher
+df$Hours
+```
+
+## 
+### Basic Functions on Dataframes
+
+To know the names of all variables in a dataframe, use the **`names()`** function:
+```{r}
+names(df)
+```
+
+Use the **`dim()`** function to view the dimensions of a dataframe: 
+```{r}
+# first value is number of rows, second is number of columns (variables)
+dim(df) 
+```
+
+Alternatively, you can use **`nrow()`** and **`ncol()`**:
+```{r}
+nrow(df) # number of rows
+ncol(df) # number of columns
+```
+
+## 
+### Basic Functions on Dataframes
+
+The **`str()`** function provides a quick overview of the structure of a dataframe, including its dimensions, variables, their data types, and first few observations: 
+```{r}
+str(df)
+```
+
+## 
+### Accessing Elements in Dataframes
+
+The "**`$`**" (dollar) operator is essential to access variables in a dataframe:
+
+<div style="text-align: center;">
+  <img src="figures/previewDataframe.png"/>
+</div>
+
+## 
+### Accessing and Working with Elements in Dataframes
+
+As an exercise, let's check whether `ECTS` is actually always `Hours*5`
+
+We may use many different, increasingly sophisticated, strategies: 
+<div class="large-code">
+```{r}
+df$Hours / df$ECTS
+
+(df$Hours / df$ECTS) == 5
+
+sum((df$Hours / df$ECTS) == 5)
+
+sum((df$Hours / df$ECTS) == 5) == nrow(df)
+
+sum((df$Hours / df$ECTS) != 5)
+```
+</div>
+
+##
+### Accessing and Working with Elements in Dataframes
+
+Variables in a dataframe can be manipulated like any other vector:
+```{r}
+log(df$Hours)
+```
+
+Also, new variables can easily be created and added at any time: 
+```{r}
+df$newVar = log(df$Hours)
+names(df)
+
+df$newVar
+```
+
+## 
+### Indexing Elements in a Dataframe
+
+In addition to using the "**`$`**" (dollar) operator, you can directly access a variable of a dataframe using **indexing** with **square brackets `[]`**: 
+```{r}
+df[ , "Hours"]
+```
+
+Notice the comma "**`,`**" above.
+
+Unlike vectors, dataframes must be indexed by **both row and column**. In the example above, we’re specifying only the desired column (`"Hours"`), leaving the row index blank before the comma **`,`** This selects all rows for the column named `"Hours"`. Remember that blank index means "all". Importantly, the "**`,`**" must always be there when indexing dataframes! 
+
+## 
+### Indexing Elements in a Dataframe - Examples
+
+```{r}
+df[ 1 , "Hours"]
+df[ 1:5 , "Hours"]
+df[ 1 , c("Teacher","Hours","TypeOfCourse")]
+df[ 1:5 , c("Teacher","Hours","TypeOfCourse")]
+df[ 1 , c(4, 5, 2)]
+```
+
+## 
+### Indexing and Modifying Elements in a Dataframe
+
+Editing/modifying elements in a dataframe is similar to what you do in vectors
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"> <div>
+```{r, echo=F}
+set.seed(0)
+```
+```{r}
+dx = data.frame(name = letters[1:10], 
+                score = rnorm(10))
+dx
+```
+</div><div>
+```{r}
+dx[3:5, "score"] = NA
+
+dx
+```
+</div><div>
+
+## 
+### Indexing and Modifying Elements in a Dataframe
+
+Editing/modifying elements in a dataframe is similar to what you do in vectors
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"> <div>
+```{r, echo=F}
+set.seed(0)
+```
+```{r}
+dx = data.frame(name = letters[1:10], 
+                score = rnorm(10))
+dx
+```
+</div><div>
+```{r}
+dx$score = dx$score * 10
+
+dx
+```
+</div><div>
+
+## 
+### Indexing and Modifying Elements in a Dataframe
+
+Editing/modifying elements in a dataframe is similar to what you do in vectors
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"> <div>
+```{r, echo=F}
+set.seed(0)
+```
+```{r}
+dx = data.frame(name = letters[1:10], 
+                score = rnorm(10))
+dx
+```
+</div><div>
+```{r}
+dx$score = round( 100 + dx$score * 15 )
+
+dx
+```
+</div><div>
+
+## 
+### Indexing and Modifying Elements in a Dataframe
+
+**Assigning a single value** to a column replaces the value for all rows (this is unlike vectors)
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"> <div>
+```{r, echo=F}
+set.seed(0)
+```
+```{r}
+dx = data.frame(name = letters[1:10], 
+                score = rnorm(10))
+dx
+```
+</div><div>
+```{r}
+dx$score = 3
+
+dx
+```
+</div><div>
+
+## 
+### Indexing Dataframes by Logical Conditions
+
+Just like for vectors, you can use **logical conditions** for indexing a dataframe.
+
+How do you extract **only the rows** related to `"MASSIMILIANO PASTORE`"?
+```{r}
+head(df)
+```
+
+## 
+### Indexing Dataframes by Logical Conditions
+
+Just like for vectors, you can use **logical conditions** for indexing a dataframe.
+
+Let's consider this logical condition:
+```{r}
+df$Teacher == "MASSIMILIANO PASTORE"
+```
+
+Let's use it to extract some dataframe rows:
+
+```{r}
+df[df$Teacher == "MASSIMILIANO PASTORE" , ] # some rows by condition , all columns
+```
+
+## 
+### Indexing Elements in a Dataframe - A Summary
+
+<div style="text-align: center;">
+  <img src="figures/dataframeCourses.png" style="width: 80%;"/>
+</div>
+
+
+## 
+### Subset
+
+Base function **`subset()`** can also be used as an alternative to indexing
+
+```{r}
+subset(df, Teacher == "MASSIMILIANO PASTORE", select=c("Teacher","Hours","TypeOfCourse"))
+df[df$Teacher == "MASSIMILIANO PASTORE" , c("Teacher","Hours","TypeOfCourse")]
+```
+
+However, indexing with **`[]`** is more "computationally focused", computationally faster (especially if working with large datasets), and more similar to programming in other languages (e.g., **Python**), so should probably be favoured by data scientists!
+
+
+## 
+### Combine Two Dataframes Using `rbind()`
+
+Imagine you have two datasets collected by two students, each including different participants: 
+
+```{r, echo=F}
+df1 = data.frame(subjName = c("Julie","Tommy","Phil"),
+                 age = c(12, 10, 10),
+                 accuracy = c(.92, .78, .85))
+df2 = data.frame(subjName = c("Amber","Max"),
+                 age = c(9, 13),
+                 accuracy = c(.87, .90))
+```
+
+```{r}
+df1
+df2
+```
+
+Our goal is to get one single dataset including all participant's data for the final analysis. Of course, you could combined these files manually outside R (e.g., in Excel). However, it's simpler and more efficient to do this directly in R using `rbind()`
+
+
+## 
+### Combine Two Dataframes Using `rbind()`
+
+<div class="large-code">
+```{r}
+dfTotal = rbind(df1, df2)
+
+dfTotal
+```
+</div>
+
+**Important**: for `rbind()` to work, the two to-be-combined dataframes must:
+
+- have the **exact same number of columns**;
+
+- the **column names must be identical** (remember that R is case-sensitive).
+
+
+## 
+### Merge Two Dataframes Using `merge()`
+
+Another frequent case is having data collected from the **same participants** across **different dataframes**, and having to analyze all information together:
+
+<div class="large-code">
+```{r, echo=F}
+df1 = data.frame(subjName = c("Julie","Amber","Tommy","Phil"),
+                 age = c(12, 9, 10, 10))
+df2 = data.frame(subjName = c("Julie","Tommy","Phil","Amber"),
+                 accuracy = c(.92, .78, .85, .87),
+                 time = c(1203, 3302, 994, 1163))
+```
+
+```{r}
+df1
+df2
+```
+</div>
+
+## 
+### Merge Two Dataframes Using `merge()`
+
+You can merge the two dataframes into a single, comprehensive dataframe: 
+
+<div class="large-code">
+```{r}
+dfTotal = merge(df1, df2, by="subjName")
+
+dfTotal
+```
+</div>
+
+**Important**: `merge()` will work even if some or even all values that should be used for merging do not match... but in that case part of or all data will be lost
+
+
+## 
+### Contingency Tables
+
+The **`table()`** function, which counts frequencies, can also be used on dataframes. Importantly, it can also create **contingency tables** when applied to multiple variables at once
+
+<div class="large-code">
+```{r}
+table(df$Hours) # just counts frequencies
+```
+
+```{r}
+table(df$TypeOfCourse, df$Hours) # creates contingency table
+```
+</div>
+
+<!-- --------------------------------------------------------------------- -->

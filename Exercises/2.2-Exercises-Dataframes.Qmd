@@ -1,0 +1,49 @@
+---
+title: "Exercises - Dataframes"
+subtitle: "*Basics of R for Data Science*"
+include-in-header: ../assets/header.html
+format: 
+  html:
+    self-contained: true
+    toc: true   
+    toc-depth: 4  
+    toc-expand: 4
+    code-fold: false 
+    message: false
+    css: "../assets/custom.css"
+editor: visual
+---
+
+#### Creating, Importing, and Indexing dataframes
+
+-   Create a dataframe named `dx` with $15$ rows and three variables including: a character variable, a numeric variable, and a logical variable (*Hint:* use the `data.frame()` function to combine previously created vectors each with $15$ observations into a single dataframe)
+
+-   Use the `mean()` function to compute the average value of the numeric variable in `dx`
+
+-   Use the `mean()` function to compute the average value of the numeric variable in `dx` but only for rows where the logical variable has value `TRUE` (*Hint:* use indexing with `[]` to select values of the numerical variable based on the values of the logical variable)
+
+-   Download <a href="datasets/exerData1.csv" download>this dataset</a>, then import it in R as a dataframe named `df`
+
+-   Use functions `head()`, `str()`, and `summary()` on `df` and understand what they do
+
+-   In `df`, select and display the values of the variable `mathAvgTime` that are *greater than* $30,000$ *(thirty thousand)*
+
+-   In `df`, select and display the values of the variable `mathAcc` only for rows where variable `mathAvgTime` is *greater than* $30,000$ *(thirty thousand)*
+
+#### Working with dataframes
+
+*This section continues using* <a href="datasets/exerData1.csv" download>`df`</a> downloaded and imported for the previous exercises
+
+-   Use the `table()` function on the `school` variable in the `df` dataframe to count the number of observations for each school
+
+-   Select and display only the rows in `df` where the `school` variable is equal to `"school4"`. Do this using indexing with `[]`, then redo using the `subset` function
+
+-   Learn how to use the `aggregate()` function by reading its documentation. Then, use it to calculate the *mean* value of each variable in `df`, grouped by the `school` variable
+
+-   Repeat the previous exercise, but this time calculate the *median* and the *standard deviation* of each variable grouped by `school`
+
+-   Understand why *warnings* occurred in the previous two exercises. Then, avoid these warnings by limiting the computations to some variables only (achieve this by using indexing with `[]`)
+
+-   Use the `cor()` function to compute a *correlation matrix* for numerical variables in `df`
+
+-   Repeat the previous task, but round the correlation coefficients in the matrix to two decimal places using the `round()` function

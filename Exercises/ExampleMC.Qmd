@@ -1,0 +1,164 @@
+---
+title: "Examples of Monte Carlo Simulations"
+subtitle: "*Basics of R for Data Science*"
+include-in-header: ../assets/header.html
+format: 
+  html:
+    self-contained: true
+    toc: true   
+    toc-depth: 4  
+    toc-expand: 4
+    code-fold: false 
+    message: false
+    css: "../assets/custom.css"
+editor: visual
+---
+
+## Linear model, just testing a between-group difference, but inference is based on model-comparison using the AIC
+
+A two-group comparison is as straightforward as a t-test. For power analysis, the `pwr.t.test()` function from the `pwr` package is sufficient. However, to add some complexity and justify using Monte Carlo simulation in this basic scenario, let's consider making inferences based on the best-fitting model using *Akaike Information Criterion* (AIC).
+
+What is reported below is basically a series of increasingly more sophisticated ways of doing the same thing. ***Just stop where it is enough for you!***
+
+#### Data simulation
+
+This might be a *naive* way of computing scores for two groups to compare:
+
+```{r, eval=F}
+# NAIVE SIMULATION
+
+N = 200
+smd = 0.3
+
+scores0 = rnorm(N/2, 0, 1)
+scores1 = rnorm(N/2, 0+smd, 1)
+scores = c(scores0, scores1)
+
+group0 = rep("group0", N/2)
+group1 = rep("group1", N/2)
+group = c(group0, group1)
+
+df = data.frame(group, scores)
+```
+
+However, the following is better because it entails understanding the logic of the underlying statistical (linear) model; note how the dependent variable `scores` is modeled using the formula $y = b0 + b1*x + residuals$
+
+```{r, eval=F}
+# MORE COMPETENT SIMULATION
+
+N = 200
+smd = 0.3
+
+group = rep(0:1, each=N/2)
+scores = 0 + smd * group + rnorm(N, 0, 1)
+
+group = ifelse(group==0, "group0", "group1") # optional
+
+df = data.frame(group, scores)
+```
+
+#### Let's run the simulation with a `for` loop!
+
+```{r, cache=T}
+N = 200
+smd = 0.3
+
+niter = 1e4
+results = data.frame(iter = 1:niter, 
+                     AICnull = NA,
+                     AICaltern = NA)
+
+for(i in 1:niter){
+   group = rep(0:1, each=N/2)
+   scores = 0 + smd * group + rnorm(N, 0, 1)
+   df = data.frame(group, scores)
+   fitNull = lm(scores ~ 1, data=df)
+   fitAltern = lm(scores ~ group, data=df)
+   results$AICnull[i] = AIC(fitNull)
+   results$AICaltern[i] = AIC(fitAltern)
+}
+
+mean(results$AICaltern < results$AICnull)
+```
+
+#### The same, but with `replicate()`
+
+While using the following in alternative to a `for` loop may look less readable in this case, it has a few advantages, including: 1) readability because it wraps potentially long sequences of code into separate custom functions; 2) it facilitates parallelization (while the `for` loop sticks to a sequential logic).
+
+```{r, cache=T}
+# first define a custom function for data generation
+simStudy = function(N=NA, smd=NA){
+  group = rep(0:1, each=N/2)
+   scores = 0 + smd * group + rnorm(N, 0, 1)
+   df = data.frame(group, scores)
+   fitNull = lm(scores ~ 1, data=df)
+   fitAltern = lm(scores ~ group, data=df)
+   return(list(AICnull=AIC(fitNull), AICaltern=AIC(fitAltern)))
+}
+
+# now run the loop
+niter = 1e4
+x = replicate(niter, simStudy(N=200, smd=0.3))
+
+# finally extract results and compute power 
+AICaltern = unlist(x["AICaltern",])
+AICnull = unlist(x["AICnull",])
+
+mean(AICaltern < AICnull)
+```
+
+#### The same, but extending to multiple sample sizes and multiple effect sizes
+
+```{r, cache=T, warning=F}
+# set parameters and initialize results
+results = expand.grid(N = c(50,100,200,400), 
+                      smd = c(0.2, 0.4),
+                      power = NA)
+
+# now run the loop(s)
+niter = 1000
+for(i in 1:nrow(results)){
+  x = replicate(niter, simStudy(results$N[i], results$smd[i]))
+  AICaltern = unlist(x["AICaltern",])
+  AICnull = unlist(x["AICnull",])
+  results$power[i] = mean(AICaltern < AICnull)
+}
+
+# plot
+library(ggplot2)
+
+results$smd = as.factor(results$smd)
+
+ggplot(results, aes(x=N, y=power, group=smd, color=smd, linetype=smd, shape=smd)) + 
+  geom_point(size=5) +
+  geom_line(size=1) +
+  theme(text=element_text(size=22)) + 
+  geom_hline(yintercept=0.8, size=1, linetype=2)+
+  ylab("power (with AIC)")
+  
+```
+
+#### The same, but more compact with `mapply()`
+
+```{r, cache=T, warning=F}
+# set parameters and initialize results
+niter = 1000
+allIters = expand.grid(N = c(50,100,200,400), 
+                      smd = c(0.2, 0.4),
+                      AICaltern = NA, 
+                      AICnull = NA, 
+                      success = NA)
+allIters = allIters[rep(1:nrow(allIters), each = niter), ]
+
+# now run the loop(s)
+x = mapply(simStudy, N=allIters$N, smd=allIters$smd)
+
+# compute results
+allIters$AICaltern = unlist(x["AICaltern", ])
+allIters$AICnull = unlist(x["AICnull", ])
+allIters$success = allIters$AICaltern < allIters$AICnull
+results = aggregate(allIters$success, by=list(N=allIters$N, smd=allIters$smd), FUN=mean)
+
+# show results
+results
+```

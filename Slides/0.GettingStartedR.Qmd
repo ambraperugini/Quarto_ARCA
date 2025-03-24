@@ -1,0 +1,204 @@
+---
+title: "Getting Started with R"
+author: "Enrico Toffalini"
+include-in-header: ../assets/slidesheader.html
+format:
+  revealjs:
+    code-line-numbers: false
+    css: custom.css
+    theme: default
+    slide-number: c/t
+    self-contained: true
+    code-fold: false
+    code-summary: "Show code"
+    code-overflow: wrap
+    title-slide-attributes: 
+     data-background-image: "figures/psicostatLogo.png"
+     data-background-size: "contain"
+     data-background-opacity: "0.15"
+execute:
+  echo: true
+  output: true
+---
+## Why becoming an R user?
+
+<div style="font-size:30px;">
+- **Mainstream in academia** for data science, increasingly used in business. *Job market advantage!*
+
+- **Free & open-source**: wherever you go, R will be with you at no costs (unlike *MPLUS*, *MATLAB*, *SPSS*, etc.)
+
+- **Real programming language**: difficult at the beginning, but: 1) gives you lots of flexibility; 2) has transfer on other programming languages (e.g., <em>**Python**</em>).
+
+- **Vast community support** thanks to a large and active community (also, *chatGPT*, *Lucrez-IA*, etc., know it pretty well!).
+
+- **Huge ecosystem**, >20,000 packages on CRAN, more from other sources (e.g., GitHub), to do amazing stuff with statistical data analysis, machine learning, data visualization, developing webapps [*shiny*], writing reports and even entire books [*bookdown*, *rmarkdown*]), can integrate with *quarto*, *github*.
+
+- Facilitates **reproducible research** by sharing code and workflows.
+</div>
+
+## What you may expect to learn in this course:
+
+<div style="font-size:44px;">
+- Executing fundamental operations and using basic functions; 
+
+- Working with essential data types and structures;
+
+- Gaining some proficiency in managing and manipulating data with vectors and dataframes;
+
+- Understanding some fundamental concepts of programming.
+</div>
+
+##
+### Over the next *couple of years*, following this PhD program, you may have the opportunity to learn to use R to perform at least some fundamentals about: 
+
+<div style="font-size:36px;">
+- Core statistical inference methods;
+
+- (Generalized) linear (mixed-effects) modeling;
+
+- Data visualization using *ggplot2*;
+
+- Power analysis via data simulation ; 
+
+- Structural Equation Modeling (SEM); 
+
+- Conducting Meta-Analysis.
+</div>
+
+## you may even create greeting cards
+
+<div style="text-align: center;">
+  <img src="figures/christmasTree.png" />
+</div>
+
+## you may even create greeting cards
+
+<div style="text-align: center;">
+  <img src="figures/happyBirthday.png" />
+</div>
+
+## or like fancy infographics
+
+<div style="text-align: center;">
+  <img src="figures/worldInfographic.png" />
+</div>
+
+## or like fancy infographics
+
+<div style="text-align: center;">
+  <img src="figures/ItalyInfographic.png" width="650px" height="550px" />
+</div>
+
+## perform classical data analysis
+
+<div style="text-align: center;">
+  <img src="figures/colorfulPlot.png"/>
+</div>
+
+## you may create interactive webapps with Shiny
+
+\
+see [**Shiny gallery**](https://shiny.posit.co/r/gallery/#feature-demos){target="_blank"}
+
+\
+here's a couple of recent real examples from **Psicostat** members:
+
+- this [game-like shiny app](https://feracot.shinyapps.io/shiny/){target="_blank"} developed for the science4all event in Padova; see [here](https://psicostat.github.io/science4all/){target="_blank"} some explanation in Italian
+
+- practical [ad-hoc shiny app](https://enricotoffalini.shinyapps.io/TimeTasks/){target="_blank"} for scoring experimental data collected by students
+
+## you may create interactive webapps with Shiny
+
+<div style="text-align: center;">
+  <img src="figures/shinyExample.png" />
+</div>
+
+
+## or entire websites and books
+
+- this [entire course](https://enricotoffalini.github.io/Basics-R/){target="_blank"} is a website in its own right
+
+- the [course textbook](https://psicostat.github.io/Introduction2R_EN/){target="_blank"} is a book/website
+
+- also see [this wonderful book](https://lakens.github.io/statistical_inferences/){target="_blank"} by Daniël Lakens explaining Statistical Inference
+
+of course, these resources integrate other tools such as GitHub and Quarto, but they can be created within the R ecosystem
+
+## install R and Rstudio
+
+\
+\
+first of all, for getting started, follow the instructions in [*Chapter 1*](https://psicostat.github.io/Introduction2R_EN/install.html){target="_blank"} of *Introduction2R* to ensure that both R and RStudio are installed
+
+## R Console (just base R)
+
+<div style="text-align: center;">
+  <img src="figures/RConsole.png"/>
+</div>
+
+## R Studio (full IDE)
+
+<div style="text-align: center;">
+  <img src="figures/RStudioIDE.png"/>
+</div>
+
+## 
+#### Some R packages that you will or may need in the future (1/3)
+
+| Package  |   Used for what  | Example(s) of functions
+|-----|-------------|-----------|
+| `base` <br/>(base R) | Basic functions | `sum`, `mean`, `sqrt`, `abs`, `c`, `data.frame`, `summary`, `scale`, `plot`, `+`, `-`
+| `stats` <br/>(base R) | Basic statistical calculations and functions | `sd`, `cor`, `cor.test`, `t.test`, `lm`, `glm`, `AIC`, `rnorm`, `rbinom`
+| `graphics` <br/>(base R) | Basic statistical calculations and functions | `boxplot`, `hist`, `barplot`
+| `effectsize` | Compute different effect sizes | `cohens_d`, `hedges_g`, `cohens_f`, `d_to_r`
+
+## 
+#### Some R packages that you will or may need in the future (2/3)
+
+| Package  |   Used for what  | Example(s) of functions
+|-----|--------------|----------|
+| `lme4` | Fitting (generalized) (non-)linear mixed-effects models | `lmer`, `glmer`, `ranef`
+| `performance` | Useful tools for models | `check_collinearity`, `r2_nagelkerke`, `icc`
+| `effects` | Display effects for various statistical models | `allEffects`
+| `emmeans` | Estimate marginal means for various models | `emmeans`
+| `ggplot2` | Create beautiful plots using The Grammar of Graphics | `ggplot`, `geom_*`
+
+## 
+#### Some R packages that you will or may need in the future (3/3)
+
+| Package  |   Used for what  | Example(s) of functions
+|-----|--------------|----------|
+| `lavaan` | Structural equation modeling (SEM) | `cfa`, `sem`
+| `semTools` | Useful tools for SEMs | `reliability`
+| `metafor` | Perform meta-analysis | `rma`, `rma.mv`, `forest`, `funnel`, `regtest`
+| `brms` | Fitting practically any Bayesian model via MCMC with STAN | `brm`, `prior`
+| `blavaan` | Fitting Bayesian SEMs | `bcfa`, `bsem`
+
+
+## Let's Test the Environment!
+
+Let's run a few commands in RStudio to familiarize with its console and see if the installation works properly
+
+```{r}
+rnorm(10) # draw 10 random values from a Standard Normal distribution
+```
+```{r, eval=F}
+?rnorm # open the help tab for the "rnorm" function
+```
+```{r}
+round( rnorm(10, mean=100, sd=15) ) # draw 10 values from IQ distribution, round them
+```
+<p style="font-size:10px;"><br/></p>
+```{r, eval=F}
+install.packages("psych") # install a package from CRAN
+```
+
+```{r}
+library(psych) # load the newly installed package
+
+fisherz(rho=0.9) # use it to transform a correlation into a Fisher's z
+```
+
+<!-- --------------------------------------------------------------------- -->
+
+

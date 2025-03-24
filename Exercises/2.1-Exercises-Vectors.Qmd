@@ -1,0 +1,63 @@
+---
+title: "Exercises - Vectors"
+subtitle: "*Basics of R for Data Science*"
+include-in-header: ../assets/header.html
+format: 
+  html:
+    self-contained: true
+    toc: true   
+    toc-depth: 4  
+    toc-expand: 4
+    code-fold: false 
+    message: false
+    css: "../assets/custom.css"
+editor: visual
+---
+
+#### Fundamentals of creating vectors
+
+-   Create a vector named `v0` composed by numbers $9, 15, 2, 121, 4, 8, 7, 11$
+
+-   Create a vector named `v1` composed by all numbers from $300$ down to $107$, using both function `seq()` and the **`:`** operator
+
+-   Use function `seq()` to create a vector named `v2` composed by all numbers between $4$ and $5$ with an increment of $0.05$ (i.e., $4.05$, $4.10$, $4.15$, and so on...)
+
+-   Use function `seq()` to create a vector named `v3` composed by exactly $12$ equally spaced numbers between $4$ and $5$
+
+-   Use function `sample()` to randomly draw $5$ numbers between $1000$ and $1500$ (before doing this, have a look at the help `?sample`)
+
+-   Use the `sample()` function to simulate $20$ rolls of a $6$-sided die (note that, to do this, you must set argument `replace=TRUE` in the `sample()` function; understand why this is necessary)
+
+#### Indexing vectors
+
+-   Select the 2^nd^ element from the previously created vector `v0`, using indexing with `[]`
+
+-   Select the 4^th^ and the 6^th^ element from the previously created vector `v0`, using indexing with `[]`
+
+-   Select the *last* element from the previously created vector `v0` (assume you don't know its length in advance, so use the `length()` function to determine it)
+
+-   Select all numbers *greater than* $4.40$ from the previously created vector `v2` (you need to use indexing and relational operators)
+
+-   Select all numbers between $4.40$ *and* $4.80$ from the previously created vector `v2` (you need to use indexing, and relational and logical operators)
+
+-   Select all numbers *smaller than* $4.20$ *or* *greater than* $4.90$ from the previously created vector `v2`
+
+#### Like a data scientist
+
+-   Use the `rnorm()` function to create an `y0` vector containing $1,000,000$ normally-distributed numbers (know that $1,000,000$ can be written as `1e6` in R) on an IQ scale (i.e., with $\mu$ = $100$, $\sigma$ = $15$)
+
+-   Display the first few values of the `y0` vector using both the `head()` function and the indexing with `[]`
+
+-   Round all values of `y0` to the nearest integer using the `round()` function, then once again display the first few values to make sure it worked
+
+-   Use the `mean()` function and indexing on the vector `y0` to find the expected average IQ value between +1 SD and +2 SD from the mean (i.e., between $115$ and $130$)
+
+-   Use the `sd()` function and indexing on the vector `y0` to find the standard deviation of IQ values that are below the mean (i.e., where IQ \< $100$)
+
+-   Estimate the standard deviation of a variable created by adding two normally distributed variables `z0` and `z1`, both with a standard deviation of $1$ (do this using `rnorm()` for simulating values, and `sd()` for computing the standard deviation)
+
+-   Repeat the previous exercise, this time add a large constant value to one variable and subtract another large constant value from the other before adding them. Verify that this does *not* affect the final standard deviation
+
+-   Use `rnorm()` to create a vector `x0` containing a large number of values simulated from a standard normal distribution (i.e., with $\mu$ = $0$, $\sigma$ = $1$); then, create a second vector `x1` by applying a linear transformation to `x0`, such as `(x0 + 6) / 11`, and observe how the mean value and standard deviation have changed from `x0` to `x1`
+
+-   Use the `cor()` function to verify that the previously created vectors `x0` and `x1` (being linear transformations of each other), have a correlation of $r = 1$

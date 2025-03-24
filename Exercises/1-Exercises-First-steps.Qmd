@@ -1,0 +1,75 @@
+---
+title: "Exercises - First Steps"
+subtitle: "*Basics of R for Data Science*"
+include-in-header: ../assets/header.html
+format: 
+  html:
+    self-contained: true
+    toc: true   
+    toc-depth: 3  
+    toc-expand: 3
+    code-fold: false 
+    message: false
+    css: "../assets/custom.css"
+editor: visual
+---
+
+### Getting started and creating objects
+
+-   Open RStudio
+
+-   Create an object with a name allowed in R and assign it a numerical value
+
+-   Create a second object with a different, allowed name, and use it to store the value of the first object squared (i.e., raised to the 2^nd^ power)
+
+-   Try to create another object with a non-allowed name and see what happens
+
+-   Now create an object and assign it a string (character) value, then use the appropriate function to inspect the type of the object and make sure that it is character
+
+### Use basic operations
+
+-   Compute the following operations:
+
+    -   $\frac{9}{11} + 10$
+    -   $\sqrt{941}$
+    -   $\frac{\sqrt{2 \times 5}\ + 6}{4}$
+    -   $\log_{2} 50$
+
+-   Round each of the previous results to the third digit, using the appropriate function for rounding
+
+-   Use the appropriate relational operator to determine whether each of the previous results is *greater than* $10$
+
+-   Use the appropriate relational operator to determine whether $3^2 + 4^2$ is *equal to* $5^2$ (*BTW*, if this is true, then $3, 4, 5$ is a Pythagorean triple)
+
+### Use functions
+
+-   Open the help/documentation for the `Sys.time()` function, then use it to determine the current (system) time and see that it is correct
+
+-   Open the help/documentation for the `rep()` function and understand what it does, also have a look at the *Examples* section in the documentation
+
+-   Generate 10 numbers randomly drawn from a standard normal distribution using the `rnorm()` function, save them in an object named `X1`
+
+-   Use the `rep()` function to replicate the whole `X1` vector three *times*, and store the result in a newly created object named `X2`
+
+-   Use the `rep()` function to replicate *each* value of `X1` thrice, and store the result in a newly created object named `X3`
+
+-   Be proud: the last few steps are actually the starting point for future data simulation 😀
+
+### Import/export, and more
+
+-   Use the appropriate function to know the current working directory
+
+-   Use both the the appropriate panel in RStudio and the `ls()` function to see all objects currently existing in the workspace (there should be all those from the previous points)
+
+-   Export the whole workspace with file name `"myWSpace.RData"`, then close RStudio
+
+-   Re-open Rstudio, make sure that the workspace is empty after the re-opening (otherwise use `rm(list=ls())`), then re-import the whole workspace named `"myWSpace.RData"` that you had previously saved, and make sure that all objects are there
+
+-   Download <a href="datasets/Performance.csv" download>this dataset</a>, then import it in RStudio using an appropriate function, and display it in your console
+
+-   Let's try to create and export a figure following a few steps:
+
+    -   create an object named `x` that includes 10 random numbers generated using `rnorm()`;
+    -   create another object named `y` that includes other 10 random numbers generated using `rnorm()`;
+    -   use the base `plot()` function for creating a scatter plot (i.e., `plot(x, y)`);
+    -   now use the `pdf()` function for exporting the above scatter plot in a `.pdf` file.

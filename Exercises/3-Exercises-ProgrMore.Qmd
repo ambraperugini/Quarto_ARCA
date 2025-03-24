@@ -1,0 +1,51 @@
+---
+title: "Exercises - Basics of Programming... and More"
+subtitle: "*Basics of R for Data Science*"
+include-in-header: ../assets/header.html
+format: 
+  html:
+    self-contained: true
+    toc: true   
+    toc-depth: 4  
+    toc-expand: 4
+    code-fold: false 
+    message: false
+    css: "../assets/custom.css"
+editor: visual
+---
+
+*This set of exercises includes practicing and integrating various skills: working with dataframes and lists, applying conditional logic and iterative programming. Some of these exercises are pretty advanced for the purposes of the present course!*
+
+## Basics of Programming... with a little data science
+
+-   Write a `for` loop that runs 20 iterations, each time generating and printing a single random number from a distribution of your choice (e.g., `rbinom()`, `rnorm()`, `rgamma()`, `rpois()`, `rlogis()`).
+
+-   Write a `for` loop that runs 20 iterations, each time: 1) drawing a single number from a *standard normal distribution* (with `rnorm()`); 2) if the number is negative print it, otherwise print the string `"positive"`.
+
+-   Use a `for` loop to address the following task: We aim to examine the sampling variability of the estimated correlation between two normally distributed, completely unrelated variables (i.e., their underlying true correlation is $r = 0$), when the sample size is $N = 30$
+    -   run thousands of iterations, each time generating two independent random variables (using `rnorm()`) with the above characteristics;
+    -   for each iteration, compute the estimated correlation coefficient with `cor()` and store it in a vector;
+    -   after completing the iterations, visualize the distribution of estimated correlation coefficients with `hist()` or any other plotting method; also, compute the `median()` and the *95% confidence interval* using the quantile methods (i.e., with `quantile()` setting the argument `probs=c(.025,.975)`).
+
+-   *Extra for advanced users:* Repeat the previous exercise without using a `for` loop, employing an alternative iterative method.
+
+-   *Extra for advanced users:* Repeat the previous exercise using your preferred iterative method, but this time under the following scenario: $N = 30$, true correlation $r = 0.50$. To generate correlated random variables, you can use the `mvrnorm()` function from the `MASS` package.
+
+## Like a Data Scientist
+
+-   Download <a href="datasets/ExerProgr.RData" download>this workspace</a> and import it using the `load()` function.
+
+-   The dataframe `df1` has all its columns stored as character, but many are mostly numeric, and should be treated as such. Your task is to determine which columns can reasonably be coerced to numeric. Use a combination of iterative and conditional programming to complete the following steps:
+
+    -   Iterate over all columns of `df1` (using a `for` loop is recommended);
+    -   For each column, calculate the percentage of observations that remain valid (i.e., do not become `NA`) when coerced to numeric using `as.numeric()`;
+    -   If the percentage exceeds 80%, coerce the column to numeric;
+    -   Keep track of the columns that were coerced to numeric;
+    -   After processing all columns, compute a correlation matrix that includes only the columns that were coerced to numeric (use the `cor()` function; set argument `use="pairwise.complete"` to avoid losing too many observation with listwise-deletion);
+    -   *for fun: use the `corrplot()` function from the `corrplot` package to obtain a more colorful correlation matrix*
+
+-   *Extra for advanced users:* The dataframe `dfWide1` contains data for treated subjects at three times (`"T0"`, `"T1"`, and `"T2"`) in <em><b>wide format</em></b>, but it needs to be reshaped to <em><b>long format</em></b> for data analysis. Your task is to reshape it to *long format* using the basic `reshape()` function (first of all, have a look at the documentation of `reshape()`).
+
+-   *Extra for advanced users:* Repeat the previous task using the convenient `pivot_longer()` function from the `tidyr` package.
+
+-   *Extra for super advanced users:* The dataframe `dfWide2` is even more complex: as it contains two variables, `Acc` and `RT`, measured at three times. Reshape `dfWide2` to *long format*, but keeping `Acc` and `RT` values in separate columns. Use any approach you like, but try to keep the code compact if possible.

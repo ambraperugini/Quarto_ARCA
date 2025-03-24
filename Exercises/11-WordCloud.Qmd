@@ -1,0 +1,46 @@
+---
+title: "Exercises - Creating a Word Cloud"
+subtitle: "*Basics of R for Data Science*"
+include-in-header: ../assets/header.html
+format: 
+  html:
+    self-contained: true
+    toc: true   
+    toc-depth: 4  
+    toc-expand: 4
+    code-fold: false 
+    message: false
+    css: "../assets/custom.css"
+editor: visual
+---
+
+This exercise goes beyond the scope of the present introductory course but is a nice challenge for more advanced R users. It integrates multiple skills: importing data, manipulating text and strings, performing basic string operations, visualizing data, exporting figures. Plus, the result is visually appealing and can make for a great showcase!
+
+<em>GOAL:</em> Create a colorful Word Cloud that represents the corpus of research published by your supervisor (or any other researcher with a sufficiently large corpus of publications). This word cloud must highlight key terms and themes in their work, based on their titles, abstracts, or other content.
+
+<em>**HINTS:**</em>
+
+-   *Select your data source:* Focus on titles + abstracts, as they generally provide a sufficient summary of a publication's content. If you wish, you can include keywords or even the full text of articles (e.g., PDF content).
+
+-   *Retrieve publication data:* A straightforward way to collect publication titles, abstracts, and keywords is via Scopus (in case of need, you can use my own <a href="wordcloud/scopustoff.csv" download>dataset</a>):
+
+    -   Go to <a href="https://www.scopus.com/search/form.uri?display=basic" target="_blank">Scopus.com</a>
+    -   Under *Documents*, open the *"Search within"* dropdown and choose *"Authors"*, then input your supervisor’s name (recommended format is: *Surname, N.*).
+    -   From the results, select *"All"*, Export the data in *CSV format*, and then select all and only the needed fields.
+
+-   *Data processing in R:*
+
+    -   There are different ways to complete this task in R. Now, let's minimize the use of external packages and rely on base functions wherever possible. However, you will need at least one package from CRAN to create a word cloud; the recommended option is the `wordcloud` package.
+    -   After importing all text into R, you can combine multiple strings into a single one using the `paste()` function with arguments `collapse=" "`
+    -   Since R is case-sensitive, it is recommended to convert all text to lowercase using the `tolower()` function (alternatively, you can convert everything to uppercase with `toupper()`).
+    -   To remove punctuation from text, you can use the following command: `gsub("[[:punct:]]","",text)`
+    -   To remove digits from text, you can use the following command: `gsub("[[:digit:]]","",text)`
+    -   You can split a text into a list of words using spaces as separators with the function `strsplit(text, " ")`. If you need a vector of strings for easier computation, you can wrap the result using the `unlist()` function.
+    -   For a word cloud, it is recommended to remove non-informative stopwords. Some R packages can do this, but otherwise you can also use this vector of stopwords for manual removal: `c("the", "and", "to", "of", "a", "in", "that", "is", "on", "for", "with", "as",` `"it", "was", "at", "by", "an", "are", "be", "this", "or", "from", "which", "not",` `"but", "also", "has", "have", "had","were", "their", "will", "can", "if", "would")`
+    -   You may want to remove words that are too short. To do so, remember that you can count the number of characters in a string using the `nchar()` function.
+    -   If you use the `wordcloud()` function from the `wordcloud` package, know that the minimum required input is: 1. a vector of unique words as the first argument; 2. a vector of their corresponding frequencies as the second argument. To compute the frequencies of strings, remember that you can use the `table()` function on the entire corpus of words.
+    -   To export the result as an image, you can use functions like `png()`, `pdf()` or others. But before that, make sure that the result from `wordcloud()` is visually appealing and colorful as intended!
+
+::: {style="text-align: center;"}
+<img src="wordcloud/wclexample.png" width="60%"/>
+:::

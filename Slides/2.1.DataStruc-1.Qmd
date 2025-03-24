@@ -1,0 +1,294 @@
+---
+title: "Data Structures (part 1)"
+subtitle: "<b><em>Vectors</em></b>"
+author: "Enrico Toffalini"
+include-in-header: ../assets/slidesheader.html
+format:
+  revealjs:
+    code-line-numbers: false
+    css: custom.css
+    theme: default
+    slide-number: c/t
+    self-contained: true
+    code-fold: false
+    code-summary: "Show code"
+    code-overflow: wrap
+    title-slide-attributes: 
+     data-background-image: "figures/psicostatLogo.png"
+     data-background-size: "contain"
+     data-background-opacity: "0.15"
+execute:
+  echo: true
+  output: true
+---
+## What Are Data Structures
+
+<div style="font-size:46px;">
+Data structures, like **vectors**, **matrices**, **dataframes**, **lists**, are fundamental tools that allow you to **organize and store complex information**, so that they can be easily **processes by functions** (e.g., `lm()` function may fit a linear model on variables stored in a dataframe)
+
+Most operations you will perform in R (e.g., *processing data*, *fitting models*, *plotting outputs*) are performed on these data structures 
+</div>
+
+<!-- --------------------------------------------------------------------- -->
+## Vectors
+
+Simple one-dimensional structures that store data of different types
+
+<div style="text-align: center;">
+  <img src="figures/vectorBase.png"/>
+</div>
+
+Here is an actual **example** (of a *numerical* vector):
+
+<div style="text-align: center;">
+  <img src="figures/vectorHours.png"/>
+</div>
+
+## Vectors as 1-D Arrays
+
+Vectors are just special cases of **arrays**
+
+<div style="text-align: center;">
+  <img src="figures/arraysStructures.png"/>
+</div>
+
+
+## Create Vectors with `c()`
+
+Vectors can easily be **created using the `c()`** base function, with a sequence of elements separated by *commas* "**`,`**"
+
+Vectors can be of different types. The following example shows a *character* vector (note the *quotes* **`" "`** around objects):
+
+<div class="large-code">
+```{r}
+Teachers = c("Pastore", "Kiesner", "Granziol", "Toffalini", 
+             "Calignano", "Epifania", "Bastianelli")
+```
+
+or numeric:
+
+```{r}
+Hours = c(10, 15, 20, 10, 15, 5, 15, 5)
+```
+</div>
+
+## Vectors Must be Homogeneous
+
+Vectors must contain elements of the **same type**. If you mix types, R will automatically **coerce** the elements to a single type, which may lead to undesired results.
+
+Therefore, **avoid mixing data types!** Example:
+
+<div class="large-code">
+```{r}
+Hours = c(10, 15, 20, 10, 15, "tbd", 15, 5)
+Hours
+```
+
+everything was coerced to become a character!
+
+If needed, use **`NA`** (Not Available):
+
+```{r}
+Hours = c(10, 15, 20, 10, 15, NA, 15, 5)
+Hours # remains a numerical vector, NA does not affect type
+```
+</div>
+
+## Vectors Must be Homogeneous
+
+You may **coerce a vector** to be a particular type if needed
+```{r, warning=T}
+Hours = c(10, 15, 20, 10, 15, "tbd", 15, 5)
+Hours
+as.numeric(Hours)
+```
+
+*But be careful!* Elements that cannot be coerced to the target type, will be replace with NA
+```{r, warning=T}
+Hours = c("10", "15,", "20", " 10", "15 ", "tbd", "15.", "5_")
+as.numeric(Hours)
+```
+
+
+
+## Indexing Vectors
+
+Select/extract elements with **INDEXING** using square brackets **`[]`**:
+
+<div class="large-code">
+```{r}
+Hours = c(10, 15, 20, 10, 15, 5, 15, 5)
+Hours[4] # a single element
+Hours[5:7] # a range of elements
+Hours[c(1,3,6)] # specific elements
+```
+
+Know the **length** of a vector using the `length()` function, and use it:
+```{r}
+length(Hours)
+```
+
+```{r}
+Hours[length(Hours)] # use it to extract the last element
+```
+</div>
+
+## Indexing Vectors
+
+**Negative indexing**
+
+You can use the *minus* sign **`-`** to select **all elements except some** from a vector. (This method is also applicable to dataframes)
+
+<div class="large-code">
+```{r}
+Hours = c(10, 15, 20, 10, 15, 5, 15, 5)
+Hours[-4] # ALL BUT a single element
+Hours[-c(5:7)] # ALL BUT a range of elements
+Hours[-c(1,3,6)] # ALL BUT specific elements
+Hours[-length(Hours)] # ALL BUT the last element
+```
+</div>
+
+## Logical Indexing
+
+Often, you'll need to extract values from a vector based on specific *<b>logical</b>* conditions. Here's an example:
+```{r}
+Hours = c(10, 15, 20, 10, 15, 5, 15, 5)
+Hours[Hours >= 15] # extract only values greater than or equal to 15
+```
+
+This is called *<b>logical indexing</b>* because you are selecting elements based on a logical vector (i.e., a sequence of `TRUE`, `FALSE`):
+```{r}
+Hours >= 15 # the logical vector actually inside the square brackets
+```
+
+Also, you can use a vector to extract values **from another vector**: 
+```{r}
+Teachers[Hours >= 15]
+```
+
+## Indexing and Assignment
+
+With indexing, you can not only select, but also **assign or modify** elements in a vector:
+```{r}
+Hours = c(10, 15, 20, 10, 15, 5, 15, 5)
+
+Hours[1] = 0 # assign a new value
+Hours[3] = Hours[3]+50 # modify an existing element
+Hours
+```
+
+You can even assign values **outside the current range** of the vector. But what happens?
+
+```{r}
+Hours[20] = 5
+Hours
+```
+
+## Operating on Vectors
+
+you can simultaneously apply an operation to a whole vector, like
+
+```{r}
+Hours = c(10, 15, 20, 10, 15, 5, 15, 5)
+Hours / 5
+```
+
+Of course, this is useful when you want to save the result as a new vector:
+
+```{r}
+ECTS = Hours / 5
+```
+
+Similarly, you can apply functions to all elements of a vector: 
+
+```{r}
+sqrt(Hours) # computes square root of each element
+log(Hours) # computes the natural logarithm of each element
+```
+
+
+## Summary Statistics on Vectors
+
+A whole vector may serve to compute summary statistics, for example using functions such as **`mean()`, `sd()`, `median()`, `quantile()`, `max()`, `min()`**:
+
+<div class="large-code">
+```{r}
+mean(Hours) # returns the average value (mean) of the vector
+sd(Hours) # returns the Standard Deviation of the vector
+median(Hours) # returns the median value of the vector
+```
+</div>
+
+## Summary Statistics on Vectors
+
+A whole vector may serve to compute summary statistics, for example using functions such as **`mean()`, `sd()`, `median()`, `quantile()`, `max()`, `min()`**:
+
+<div class="large-code">
+```{r}
+quantile(Hours, probs=c(.25, .50, .75)) # returns desired quantiles
+max(Hours) # returns largest value
+min(Hours) # returns smallest value
+```
+</div>
+
+##
+### Summary Statistics - Managing Missing (`NA`) Values
+
+All of the previous summary statistics will **fail** if there is even a single `NA` value:
+```{r}
+Hours = c(10, 15, 20, 10, 15, NA, 15, 5)
+
+mean(Hours) # a single NA value implies that the average is impossible to determine
+```
+
+```{r, error=T}
+quantile(Hours, probs=c(.25, .75)) # quantile() will even return an Error
+```
+
+You can easily manage missing values by adding the **`na.rm=TRUE`** argument:
+```{r}
+mean(Hours, na.rm=TRUE) # NA values are ignored 
+quantile(Hours, probs=c(.25, .75), na.rm=TRUE) # NA values are ignored 
+```
+
+##
+### Replacing `NA` With the Average Value
+
+<div style="large-code">
+Replacing a missing value with the average across valid values is risky, as it may alter many other summary statistics, but it is a good example for understanding different concepts seen so far:
+
+```{r}
+Hours = c(10, 15, 20, 10, 15, NA, 15, 5)
+
+# compute the average value ignoring NAs, and put it wherever 
+# there is a NA value in the vector
+Hours[is.na(Hours)] = mean(Hours, na.rm=TRUE)
+
+# now let's inspect the updated content of the vector
+Hours
+
+# by the way... na.rm=TRUE is no longer needed now, as NA is no longer there
+mean(Hours)
+```
+</div>
+
+## Frequency Counts
+
+Another useful summary statistic is the **frequency count**, which shows how often each unique value appears in a vector. You can use the **`table()`** function to calculate frequencies easily:
+
+```{r}
+type = c("METHODOLOGY", "METHODOLOGY", "PROGRAMMING", "SOFT SKILLS", "SOFT SKILLS", 
+         "METHODOLOGY", "SOFT SKILLS", "METHODOLOGY", "PROGRAMMING")
+table(type)
+```
+
+*Be careful:* R is case sensitive!
+```{r}
+type = c("METHODOLOGY", "methodology", "PROGRAMMING", "SOFT SKILLS", "SOFT SKILLS", 
+         "METHODOLOGY", "SOFT SKILLS", "METHODOLOGY", "Programming")
+table(type)
+```
+
+
+<!-- --------------------------------------------------------------------- -->

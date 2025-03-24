@@ -1,0 +1,80 @@
+---
+title: "Working With Strings, a Few Tricks"
+subtitle: "*Basics of R for Data Science*"
+include-in-header: ../assets/header.html
+format: 
+  html:
+    self-contained: true
+    toc: true   
+    toc-depth: 4  
+    toc-expand: 4
+    code-fold: false 
+    message: false
+    css: "../assets/custom.css"
+editor: visual
+---
+
+#### Uppercase and lowercase with `toupper()` and `tolower()`
+
+```{r}
+text = "This is a String"
+
+toupper(text)
+
+tolower(text)
+```
+
+#### Replace a character with another character in a string using `gsub()`
+```{r}
+text = "this is a string"
+
+gsub("t", "X", text)
+```
+
+#### Removing all punctuation 
+```{r}
+text = "This is a string. For some reason, there is some punctuation."
+
+gsub("[[:punct:]]", "", text)
+```
+
+#### Removing all digits 
+```{r}
+text = "in this string231 there are some 1241useless digits 443perhaps because 3434someone copy and pasted 985from a pdf"
+
+gsub("[[:digit:]]", "", text)
+```
+
+#### Splitting a string into a vector of words 
+```{r}
+text = "this is a string"
+
+unlist(strsplit(text, split=" "))
+```
+
+*Note:* `strplit()` actually does the job, but it returns a list; if you want a vector for convenience, use `unlist()` on the output list
+
+#### Removing a few cases from a vector
+```{r}
+myVect = c("this", "is", "a", "vector")
+
+myVect[!myVect %in% c("is", "a")]
+```
+
+#### Counting characters in strings
+```{r}
+myVect = c("this", "is", "a", "vector")
+
+nchar(myVect)
+```
+
+#### Turning a vector of strings into a single string
+
+```{r}
+myVect = c("this", "is", "a", "vector")
+
+paste(myVect, collapse=" ")
+```
+
+
+

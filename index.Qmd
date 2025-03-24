@@ -1,0 +1,103 @@
+---
+title: "Corso di Rmarkdown in Quarto"
+subtitle: "Corso ARCA"
+author: "Ambra Perugini"
+include-in-header: assets/header.html
+format: 
+  html:
+    self-contained: true
+    toc: true   
+    toc-depth: 3 
+    toc-expand: 3 
+    code-fold: false 
+    message: false
+    css: "assets/custom.css"
+editor: visual
+---
+
+Questo corso ha l'obiettivo di gettare le basi per imparare ad utilizzare Rmarkdown e Quarto per pdf, presentazioni e file htms.
+
+| Date       | Orario        | Aula |
+|------------|---------------|------|
+| 31/03/2025 | 9:00 - 13:00  | 4R   |
+| 01/04/2025 | 9:00 - 13:00  | 4R   |
+| 02/04/2025 | 13:00 - 17:00 | 4R   |
+| 03/04/2025 | 8:30 - 12:30  | 4M   |
+| 04/04/2025 | 9:00 - 13:00  | 4R   |
+
+### Getting Started
+
+1.  **Bookmark the Course Homepage**: Save the URL of the present page [https://enricotoffalini.github.io/Basics-R/](https://enricotoffalini.github.io/Basics-R/){target="_blank"} for quick access to all course materials.
+2.  **Install R and RStudio**: go to [**this download page**](https://posit.co/download/rstudio-desktop/){target="_blank"} to install *R* and *RStudio Desktop* on your computer (further setup instructions can be found in [*Chapter 1*](https://psicostat.github.io/Introduction2R_EN/install.html){target="_blank"} of *Introduction2R*)
+3.  *Optional* - check your installation by running this code in your newly installed RStudio, and install a few packages:
+
+``` r
+pkgs = c("readxl", "psych", "ggplot2")
+install.packages(pkgs)
+```
+
+### Course Topics
+
+##### Introduction to the R Environment and First Steps in R
+
+We will cover the installation of R and see how to organize and manage a work session in R Studio, how to create objects, what are data types, how to perform basic operations on them, and how to import and export data, figures, and workspaces.
+
+##### Data Structures
+
+We will introduce the main data structures in R and methods for interacting with them effectively. We will focus on vectors, dataframes, lists, and more. Dataframes will be given special attention.
+
+##### Basics of Programming in R
+
+We will introduce essential programming concepts and their implementation in R, including conditional operations (such as `if...else`), iterative programming (including the `for` loops and the `apply` family), and defining custom functions.
+
+##### *Advanced*
+
+*For more experienced R users, some materials under the Exercises section will provide more stimulating challenges and instructions, even beyond the scope of the present introductory course.*
+
+## Materials
+
+```{=html}
+<!--
+::: {style="color: #999; font-weight: bold; font-style: italic;"}
+SECTION IN PROGRESS: NEW MATERIALS WILL BE ADDED HERE THROUGHOUT THE COURSE
+:::
+-->
+```
+### Slides
+
+-   **Getting Started with R** - [html](Slides/0.GettingStartedR.html){target="_blank"} - [pdf](Slides/0.GettingStartedR.pdf){target="_blank"}
+-   **First Steps in R (part 1)** - [html](Slides/1.1.FirstStepsR-1.html){target="_blank"} - [pdf](Slides/1.1.FirstStepsR-1.pdf){target="_blank"}
+-   **First Steps in R (part 2)** - [html](Slides/1.2.FirstStepsR-2.html){target="_blank"} - [pdf](Slides/1.2.FirstStepsR-2.pdf){target="_blank"}
+-   **Data Structures (part 1)** - [html](Slides/2.1.DataStruc-1.html){target="_blank"} - [pdf](Slides/2.1.DataStruc-1.pdf){target="_blank"} *(vectors)*
+-   **Data Structures (part 2)** - [html](Slides/2.2.DataStruc-2.html){target="_blank"} - [pdf](Slides/2.2.DataStruc-2.pdf){target="_blank"} *(dataframes)*
+-   **Data Structures (part 3)** - [html](Slides/2.3.DataStruc-3.html){target="_blank"} - [pdf](Slides/2.3.DataStruc-3.pdf){target="_blank"} *(lists and more)*
+-   **Basics of Programming** - [html](Slides/3.Programming.html){target="_blank"} - [pdf](Slides/3.Programming.pdf){target="_blank"} *(conditions, iterations, custom functions)*
+
+### Exercises
+
+*— The following exercises are fundamental, and they importantly integrate concepts from the slides and introduce new functions and methods that you want to know!*
+
+-   **First steps in R** - [html](Exercises/1-Exercises-First-steps.html){target="_blank"}
+-   **Vectors** - [html](Exercises/2.1-Exercises-Vectors.html){target="_blank"}
+-   **Dataframes** - [html](Exercises/2.2-Exercises-Dataframes.html){target="_blank"}
+-   <b>Data <em>nightmare</em> exercise</b> - [html](Exercises/2.3-Exercises-DataScientist.html){target="_blank"}
+-   **Programming and more** - [html](Exercises/3-Exercises-ProgrMore.html){target="_blank"}
+
+*— These other exercises are beyond the scope of this introductory course, but they could be stimulating and useful for more advanced R users:*
+
+-   **Creating a word cloud** - [html](Exercises/11-WordCloud.html){target="_blank"}
+    -   ::: {style="font-size:14px;"}
+        see [here](Exercises/ExampleStrings.html){target="_blank"} some suggestions on manipulating strings
+        :::
+-   **Monte Carlo simulations for Power analysis** - [html](Exercises/12-MonteCarloSim.html){target="_blank"}
+    -   ::: {style="font-size:14px;"}
+        see [here](Exercises/ExampleMC.html){target="_blank"} some examples of Monte Carlo simulations
+        :::
+
+------------------------------------------------------------------------
+
+::: {style="font-size:11px;"}
+GitHub repository associated to the present course website: [https://github.com/EnricoToffalini/Basics-R](https://github.com/EnricoToffalini/Basics-R){target="_blank"}
+
+Many thanks and love to Filippo Gambarota for sharing his expertise in using GitHub, Quarto, and creating GitHub Pages websites.
+:::
