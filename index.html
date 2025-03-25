@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
 }
-
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-{ counter-reset: source-line 0; }
-pre.numberSource code > span
-{ position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-{ content: counter(source-line);
-position: relative; left: -1em; text-align: right; vertical-align: baseline;
-border: none; display: inline-block;
--webkit-touch-callout: none; -webkit-user-select: none;
--khtml-user-select: none; -moz-user-select: none;
--ms-user-select: none; user-select: none;
-padding: 0 4px; width: 4em;
-}
-pre.numberSource { margin-left: 3em; padding-left: 4px; }
-div.sourceCode
-{ }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -3114,13 +3080,10 @@ border-left: 4px solid #760000 !important;
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#prerequisiti" id="toc-prerequisiti" class="nav-link active" data-scroll-target="#prerequisiti">Prerequisiti</a></li>
   <li><a href="#course-topics" id="toc-course-topics" class="nav-link" data-scroll-target="#course-topics">Course Topics</a></li>
-  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a>
-  <ul class="collapse">
   <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
-  </ul></li>
   </ul>
 </nav>
 </div>
@@ -3189,15 +3152,13 @@ border-left: 4px solid #760000 !important;
 </tr>
 </tbody>
 </table>
-<section id="getting-started" class="level3">
-<h3 class="anchored" data-anchor-id="getting-started">Getting Started</h3>
+<section id="prerequisiti" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisiti">Prerequisiti</h3>
 <ol type="1">
-<li><strong>Bookmark the Course Homepage</strong>: Save the URL of the present page <a href="https://enricotoffalini.github.io/Basics-R/" target="_blank">https://enricotoffalini.github.io/Basics-R/</a> for quick access to all course materials.</li>
-<li><strong>Install R and RStudio</strong>: go to <a href="https://posit.co/download/rstudio-desktop/" target="_blank"><strong>this download page</strong></a> to install <em>R</em> and <em>RStudio Desktop</em> on your computer (further setup instructions can be found in <a href="https://psicostat.github.io/Introduction2R_EN/install.html" target="_blank"><em>Chapter 1</em></a> of <em>Introduction2R</em>)</li>
-<li><em>Optional</em> - check your installation by running this code in your newly installed RStudio, and install a few packages:</li>
+<li>Aver installato R e RStudio <a href="https://posit.co/download/rstudio-desktop/" target="_blank"><strong>pagina per il download</strong></a></li>
+<li>Aver installato Latex così da poter compilare i pdf, fondamentale per seguire gli esercizi in aula <a href="https://www.latex-project.org/get/" target="_blank"><strong>pagina per il download</strong></a></li>
+<li>Aver controllato che sia RStudio che la compilazione dei PDF funzionino correttamente, per Rmarkdown basta compilare in pdf il file di esempio che viene generato aprendo un nuovo documento.</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pkgs <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;readxl&quot;</span>, <span class="st">&quot;psych&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(pkgs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="course-topics" class="level3">
 <h3 class="anchored" data-anchor-id="course-topics">Course Topics</h3>
@@ -3213,18 +3174,7 @@ border-left: 4px solid #760000 !important;
 <h5 class="anchored" data-anchor-id="basics-of-programming-in-r">Basics of Programming in R</h5>
 <p>We will introduce essential programming concepts and their implementation in R, including conditional operations (such as <code>if...else</code>), iterative programming (including the <code>for</code> loops and the <code>apply</code> family), and defining custom functions.</p>
 </section>
-<section id="advanced" class="level5">
-<h5 class="anchored" data-anchor-id="advanced"><em>Advanced</em></h5>
-<p><em>For more experienced R users, some materials under the Exercises section will provide more stimulating challenges and instructions, even beyond the scope of the present introductory course.</em></p>
 </section>
-</section>
-<section id="materials" class="level2">
-<h2 class="anchored" data-anchor-id="materials">Materials</h2>
-<!--
-::: {style="color: #999; font-weight: bold; font-style: italic;"}
-SECTION IN PROGRESS: NEW MATERIALS WILL BE ADDED HERE THROUGHOUT THE COURSE
-:::
--->
 <section id="slides" class="level3">
 <h3 class="anchored" data-anchor-id="slides">Slides</h3>
 <ul>
@@ -3267,7 +3217,6 @@ SECTION IN PROGRESS: NEW MATERIALS WILL BE ADDED HERE THROUGHOUT THE COURSE
 <p>GitHub repository associated to the present course website: <a href="https://github.com/EnricoToffalini/Basics-R" target="_blank">https://github.com/EnricoToffalini/Basics-R</a></p>
 <p>Many thanks and love to Filippo Gambarota for sharing his expertise in using GitHub, Quarto, and creating GitHub Pages websites.</p>
 </div>
-</section>
 </section>
 
 </main>

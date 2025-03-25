@@ -25,16 +25,12 @@ Questo corso ha l'obiettivo di gettare le basi per imparare ad utilizzare Rmarkd
 | 03/04/2025 | 8:30 - 12:30  | 4M   |
 | 04/04/2025 | 9:00 - 13:00  | 4R   |
 
-### Getting Started
+### Prerequisiti
 
-1.  **Bookmark the Course Homepage**: Save the URL of the present page [https://enricotoffalini.github.io/Basics-R/](https://enricotoffalini.github.io/Basics-R/){target="_blank"} for quick access to all course materials.
-2.  **Install R and RStudio**: go to [**this download page**](https://posit.co/download/rstudio-desktop/){target="_blank"} to install *R* and *RStudio Desktop* on your computer (further setup instructions can be found in [*Chapter 1*](https://psicostat.github.io/Introduction2R_EN/install.html){target="_blank"} of *Introduction2R*)
-3.  *Optional* - check your installation by running this code in your newly installed RStudio, and install a few packages:
+1. Aver installato R e RStudio [**pagina per il download**](https://posit.co/download/rstudio-desktop/){target="_blank"}
+2. Aver installato Latex così da poter compilare i pdf, fondamentale per seguire gli esercizi in aula [**pagina per il download**](https://www.latex-project.org/get/){target="_blank"}
+3. Aver controllato che sia RStudio che la compilazione dei PDF funzionino correttamente, per Rmarkdown basta compilare in pdf il file di esempio che viene generato aprendo un nuovo documento.
 
-``` r
-pkgs = c("readxl", "psych", "ggplot2")
-install.packages(pkgs)
-```
 
 ### Course Topics
 
@@ -50,19 +46,7 @@ We will introduce the main data structures in R and methods for interacting with
 
 We will introduce essential programming concepts and their implementation in R, including conditional operations (such as `if...else`), iterative programming (including the `for` loops and the `apply` family), and defining custom functions.
 
-##### *Advanced*
 
-*For more experienced R users, some materials under the Exercises section will provide more stimulating challenges and instructions, even beyond the scope of the present introductory course.*
-
-## Materials
-
-```{=html}
-<!--
-::: {style="color: #999; font-weight: bold; font-style: italic;"}
-SECTION IN PROGRESS: NEW MATERIALS WILL BE ADDED HERE THROUGHOUT THE COURSE
-:::
--->
-```
 ### Slides
 
 -   **Getting Started with R** - [html](Slides/0.GettingStartedR.html){target="_blank"} - [pdf](Slides/0.GettingStartedR.pdf){target="_blank"}
