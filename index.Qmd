@@ -32,21 +32,6 @@ Questo corso ha l'obiettivo di gettare le basi per imparare ad utilizzare Rmarkd
 3. Aver controllato che sia RStudio che la compilazione dei PDF funzionino correttamente, per Rmarkdown basta compilare in pdf il file di esempio che viene generato aprendo un nuovo documento.
 
 
-### Course Topics
-
-##### Introduction to the R Environment and First Steps in R
-
-We will cover the installation of R and see how to organize and manage a work session in R Studio, how to create objects, what are data types, how to perform basic operations on them, and how to import and export data, figures, and workspaces.
-
-##### Data Structures
-
-We will introduce the main data structures in R and methods for interacting with them effectively. We will focus on vectors, dataframes, lists, and more. Dataframes will be given special attention.
-
-##### Basics of Programming in R
-
-We will introduce essential programming concepts and their implementation in R, including conditional operations (such as `if...else`), iterative programming (including the `for` loops and the `apply` family), and defining custom functions.
-
-
 ### Slides
 
 -   **Getting Started with R** - [html](Slides/0.GettingStartedR.html){target="_blank"} - [pdf](Slides/0.GettingStartedR.pdf){target="_blank"}
@@ -81,7 +66,6 @@ We will introduce essential programming concepts and their implementation in R, 
 ------------------------------------------------------------------------
 
 ::: {style="font-size:11px;"}
-GitHub repository associated to the present course website: [https://github.com/EnricoToffalini/Basics-R](https://github.com/EnricoToffalini/Basics-R){target="_blank"}
+GitHub repository associated to the present course website: [https://github.com/ambraperugini/Quarto_ARCA](https://github.com/ambraperugini/Quarto_ARCA){target="_blank"}
 
-Many thanks and love to Filippo Gambarota for sharing his expertise in using GitHub, Quarto, and creating GitHub Pages websites.
 :::
