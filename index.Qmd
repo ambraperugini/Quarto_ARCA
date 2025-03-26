@@ -25,7 +25,9 @@ Questo corso ha l'obiettivo di gettare le basi per imparare ad utilizzare Rmarkd
 | 03/04/2025 | 8:30 - 12:30  | 4M   |
 | 04/04/2025 | 9:00 - 13:00  | 4R   |
 
-### Prerequisiti
+### Prima di iniziare il corso
+
+Fondamentale:
 
 1. Aver installato R e RStudio [**pagina per il download**](https://posit.co/download/rstudio-desktop/){target="_blank"}
 2. Aver installato Latex così da poter compilare i pdf, fondamentale per seguire gli esercizi in aula [**pagina per il download**](https://www.latex-project.org/get/){target="_blank"}
