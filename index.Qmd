@@ -29,14 +29,17 @@ Questo corso ha l'obiettivo di gettare le basi per imparare ad utilizzare Rmarkd
 
 Fondamentale:
 
-1. Aver installato R e RStudio [**pagina per il download**](https://posit.co/download/rstudio-desktop/){target="_blank"}
-2. Aver installato Latex così da poter compilare i pdf, fondamentale per seguire gli esercizi in aula [**pagina per il download**](https://www.latex-project.org/get/){target="_blank"}
-3. Aver controllato che sia RStudio che la compilazione dei PDF funzionino correttamente, per Rmarkdown basta compilare in pdf il file di esempio che viene generato aprendo un nuovo documento.
+1.  Aver installato R e RStudio [**pagina per il download**](https://posit.co/download/rstudio-desktop/){target="_blank"}
+2.  Aver installato Latex così da poter compilare i pdf, fondamentale per seguire gli esercizi in aula [**pagina per il download**](https://www.latex-project.org/get/){target="_blank"}
+3.  Aver controllato che sia RStudio che la compilazione dei PDF funzionino correttamente, per Rmarkdown basta compilare in pdf il file di esempio che viene generato aprendo un nuovo documento.
 
+### Link utili
+
+- R Markdown [**sito**](https://quarto.org/docs/get-started/hello/rstudio.html){target="_blank"}
+- Quarto [**sito**](https://rmarkdown.rstudio.com){target="_blank"}
 
 ------------------------------------------------------------------------
 
 ::: {style="font-size:11px;"}
 GitHub repository associated to the present course website: [https://github.com/ambraperugini/Quarto_ARCA](https://github.com/ambraperugini/Quarto_ARCA){target="_blank"}
-
 :::
