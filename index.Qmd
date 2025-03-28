@@ -35,8 +35,8 @@ Fondamentale:
 
 ### Link utili
 
-- R Markdown [**sito**](https://quarto.org/docs/get-started/hello/rstudio.html){target="_blank"}
-- Quarto [**sito**](https://rmarkdown.rstudio.com){target="_blank"}
+-   R Markdown [**sito**](https://rmarkdown.rstudio.com){target="_blank"} 
+-   Quarto [**sito**](https://quarto.org/docs/get-started/hello/rstudio.html){target="_blank"}
 
 ------------------------------------------------------------------------
 
