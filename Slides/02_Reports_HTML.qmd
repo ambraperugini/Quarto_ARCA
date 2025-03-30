@@ -1,0 +1,53 @@
+---
+title: "Reports riproducibili in HTML"
+author: "Ambra Perugini"
+format:
+  revealjs:
+    code-line-numbers: false
+    theme: default
+    slide-number: c/t
+    self-contained: true
+    code-fold: false
+    code-summary: "Show code"
+    code-overflow: wrap
+    title-slide-attributes: 
+     data-background-image: "figures/psicostatLogo.png"
+     data-background-size: "contain"
+     data-background-opacity: "0.15"
+execute:
+  echo: true
+  output: true
+---
+
+## Getting started (YAML)
+
+```yaml
+---
+title: "Report analisi"
+author: "Nome Cognome"
+date: "`r Sys.Date()`"
+bibliography: bibliography.bib
+output: html_document
+---
+```
+![](figures/html.png){fig-align="center"}
+
+## Esercizio {.scrollable}
+
+- Scaricate il dataset "sara_dataset.xlsx"
+- Descrivete le variabili con statistiche descrittive
+- Analizzate come meglio credete 2 delle variabili
+- inserire una slide con due colonne
+- inserire una parola di colore diverso
+- inserire un'immagine
+- inserire delle citazioni tramite il file .bib
+- scrivete un piccolo paragrafo di conclusione in cui riassumete il lavoro fatto
+
+
+
+
+
+
+
+
+
