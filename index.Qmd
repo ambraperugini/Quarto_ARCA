@@ -35,8 +35,25 @@ Fondamentale:
 
 ### Link utili
 
--   R Markdown [**sito**](https://rmarkdown.rstudio.com){target="_blank"} 
+-   R Markdown [**sito**](https://rmarkdown.rstudio.com){target="_blank"}
+
 -   Quarto [**sito**](https://quarto.org/docs/get-started/hello/rstudio.html){target="_blank"}
+
+Documenti:
+
+-   HTML in Quarto [**sito**](https://quarto.org/docs/get-started/hello/rstudio.html){target="_blank"}
+
+- PDF in Quarto [**sito**](https://quarto.org/docs/output-formats/pdf-basics.html){target="_blank"}
+
+- Word in Quarto [**sito**](https://quarto.org/docs/output-formats/ms-word.html){target="_blank"}
+
+Presentazioni ([overview](https://quarto.org/docs/presentations/){target="_blank"}):
+
+- Revealjs in Quarto [**sito**](https://quarto.org/docs/presentations/revealjs/){target="_blank"}
+
+- Powerpoint in Quarto[**sito**](https://quarto.org/docs/presentations/powerpoint.html){target="_blank"}
+
+- PDF in Quarto[**sito**](https://quarto.org/docs/presentations/beamer.html){target="_blank"}
 
 ------------------------------------------------------------------------
 
