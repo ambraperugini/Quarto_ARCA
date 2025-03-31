@@ -95,7 +95,7 @@ Avete visto varie immagini, ecco come le inserisco:
 
 ![](figures/magic.jpeg){fig-align="center"}
 
-## Aggiungere citazioni
+## Aggiungere citazioni {.scrollable}
 
 \
 
@@ -110,7 +110,7 @@ Questo articolo mi piace molto ed è stato scritto da @cohen2013statistical, @la
 
 \
 
-:::{style="font-size: .8em"}
+:::{style="font-size: .8em; text-align: left"}
 
 Le references vengono poi in automatico messe per esteso alla fine del fine.
 
@@ -119,6 +119,51 @@ Per creare un file .bib, aprire un nuovo file di testo e salvarlo con l'estensio
 Importante inserire nello YAML la voce `bibliography: "nome del file"`
 
 :::
+
+```{rmarkdown}
+
+:::{style="font-size: .8em; text-align: left"}
+
+Le references vengono poi in automatico messe per esteso alla fine del fine.
+
+Per creare un file .bib, aprire un nuovo file di testo e salvarlo con l'estensione .bib
+
+Importante inserire nello YAML la voce `bibliography: "nome del file"`
+
+:::
+
+```
+
+## Valori nel testo presi da oggetti r
+
+
+```{r}
+#| echo = TRUE
+
+library(readxl)
+DATA <- read_xls(path = "data/Sara_dataset.xls")
+
+cor_pre <- cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")
+
+
+cor_pre
+```
+
+Elenco delle correlazioni:
+
+- correlazione tra Ansia pre e math quiz -> $r =$ `r cor_pre`
+
+
+```{markdown}
+- correlazione tra Ansia pre e math quiz -> $r =$ `r cor_pre`
+```
+
+
+- `r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`
+
+```{markdown}
+- `r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`
+```
 
 ## Esercizio 
 
