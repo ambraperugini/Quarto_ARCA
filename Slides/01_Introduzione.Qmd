@@ -150,14 +150,20 @@ Si può anche usare *corsivo* o `testo con font monospaziato`.
 
 Si usano per inserire codice ed eseguire analisi:
 
-
 ```r
 
 #| warning: false
 #| include: false
+#| eval: false
+#| echo: false
 summary(cars)
 
 ```
+
+- warning: se false, non fa vedere i warning del modello e/o funzione
+- include: nel repoprt o documento si vede oppure no l'ouput
+- eval: se true gira il codice, se false non gira proprio
+- echo: false -> non si vede il codice, se echo -> true si vede il codice che avete utilizzato
 
 Per settare opzioni dei chunk in **Quarto**, in stile YAML, utilizzare #| all'inizio di riga dentro il chunk. In R Markdown invece inserire le informazioni dentro `{r message = false, echo = false}`
 
