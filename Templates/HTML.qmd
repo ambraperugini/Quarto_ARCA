@@ -1,0 +1,51 @@
+---
+title: "Il mio primo HTML"
+subtitle: "Speriamo che funzioni"
+author: "Ambra Perugini"
+format: html
+bibliography: "Bib2.bib"
+documentclass: "apa7"
+---
+
+```{r}
+#| echo: false
+
+library(readxl)
+DATA <- read_xls("Sara_dataset.xls", col_names = TRUE)
+
+```
+
+
+## Colonne
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Quarto:
+
+- Bellissimo
+
+- Ha anche revealjs
+
+- Punto 3
+
+:::
+
+::: {.column width="50%"}
+
+Markdown:
+
+- Fantastico
+
+- Niente revealjs :(
+
+- Punto 3
+
+:::
+
+::::
+
+L'articolo di Cohen sulla terra piatta è @laterraepiatta
+
+

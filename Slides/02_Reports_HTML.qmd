@@ -82,7 +82,7 @@ Contenuto 2:
 
 ## Testo colorato e immagini
 
-Io <span style="color:red;">amo</span> Quarto!
+Io <span style="color:#ff4da6;">amo</span> Quarto!
 
 ```markdown
 Io <span style="color:red;">amo</span> Quarto!
@@ -99,7 +99,7 @@ Avete visto varie immagini, ecco come le inserisco:
 
 \
 
-Questo articolo mi piace molto ed è stato scritto da @cohen2013statistical.
+Questo articolo mi piace molto ed è stato scritto da @cohen2013statistical, @laterraepiatta.
 
 \
 
@@ -110,7 +110,15 @@ Questo articolo mi piace molto ed è stato scritto da @cohen2013statistical.
 
 \
 
+:::{style="font-size: .8em"}
+
 Le references vengono poi in automatico messe per esteso alla fine del fine.
+
+Per creare un file .bib, aprire un nuovo file di testo e salvarlo con l'estensione .bib
+
+Importante inserire nello YAML la voce `bibliography: "nome del file"`
+
+:::
 
 ## Esercizio 
 
