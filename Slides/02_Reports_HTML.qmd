@@ -122,10 +122,10 @@ Importante inserire nello YAML la voce `bibliography: "nome del file"`
 
 ## Esercizio 
 
-- Scaricate il dataset "sara_dataset.xlsx"
+- Scaricate il dataset "Sara_dataset.xlsx"
 - Descrivete le variabili con statistiche descrittive
 - Analizzate come meglio credete 2 delle variabili
-- inserire una slide con due colonne
+- inserire una sezione con due colonne
 - inserire una parola di colore diverso
 - inserire un'immagine
 - inserire delle citazioni tramite il file .bib

@@ -10,42 +10,47 @@ documentclass: "apa7"
 ```{r}
 #| echo: false
 
+rm(list=ls())
+
 library(readxl)
 DATA <- read_xls("Sara_dataset.xls", col_names = TRUE)
 
 ```
 
+```{r}
+table(DATA$gender)
+```
 
 ## Colonne
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
 Quarto:
 
-- Bellissimo
+-   Bellissimo
 
-- Ha anche revealjs
+-   Ha anche revealjs
 
-- Punto 3
-
+-   Punto 3
 :::
 
 ::: {.column width="50%"}
-
 Markdown:
 
-- Fantastico
+-   Fantastico
 
-- Niente revealjs :(
+-   Niente revealjs :(
 
-- Punto 3
-
+-   Punto 3
 :::
-
-::::
+:::
 
 L'articolo di Cohen sulla terra piatta è @laterraepiatta
 
+## [Color-hex](https://www.color-hex.com/color-palette/1057481)
 
+## Sezione 2
+
+**Testo:**
+
+1.  
