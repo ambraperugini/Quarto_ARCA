@@ -142,7 +142,7 @@ Le references vengono poi in automatico messe per esteso alla fine del fine. Per
 
 `bibliography: "nome del file"`
 
-`csl: "apa"csl`
+`csl: "apa.csl"`
 
 
 
