@@ -24,7 +24,16 @@ execute:
   output: true
 ---
 
+
 ## Getting started (YAML)
+
+```{css, echo=FALSE}
+.title {
+  font-size: 300px;
+  color: purple !important;
+}
+```
+
 
 ```yaml
 ---
@@ -138,7 +147,7 @@ Questo articolo mi piace molto ed è stato scritto da @scheel2021hypothesis, [@s
 ```
 
 
-Le references vengono poi in automatico messe per esteso alla fine del fine. Per creare un file .bib, aprire un nuovo file di testo e salvarlo con l'estensione .bib. Importante inserire nello YAML la voce:
+Le references vengono poi in automatico messe per esteso alla fine del fine. Per creare un file .bib, aprire un nuovo file di testo e salvarlo con l'estensione .bib. Importante inserire nello **YAML** la voce:
 
 `bibliography: "nome del file"`
 
@@ -369,6 +378,10 @@ h1 {
   text-align: center;
 }
 ```
+
+## CSS direttamente in Quarto
+
+![](figures/css.png)
 
 ## References
 

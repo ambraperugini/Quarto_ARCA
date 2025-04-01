@@ -3,9 +3,20 @@ title: "Il mio primo HTML"
 subtitle: "Speriamo che funzioni"
 author: "Ambra Perugini"
 format: html
-bibliography: "Bib2.bib"
+page-layout: full
+bibliography: "bib2.bib"
+bibliographystyle: apa
+csl: "apa.csl"
 documentclass: "apa7"
 ---
+
+```{css, echo=FALSE}
+.title {
+  font-size: 100px;
+  color: purple !important;
+}
+```
+
 
 ```{r}
 #| echo: false
