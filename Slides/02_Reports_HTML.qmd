@@ -3,9 +3,12 @@ title: "Reports riproducibili in HTML"
 author: "Ambra Perugini"
 format:
   revealjs:
+    css: custom.css
     code-line-numbers: false
     theme: default
     bibliography: "bibliography.bib"
+    bibliographystyle: apa
+    csl: "apa.csl"
     documentclass: "apa7"
     slide-number: c/t
     self-contained: true
@@ -33,6 +36,34 @@ output: html_document
 ---
 ```
 ![](figures/html.png){fig-align="center"}
+
+## Parametri YAML {.smaller}
+
+- toc: true (table of content)
+
+- toc-title: Contents
+
+- toc-location: left
+
+- number-sections: true
+
+- embed-resources: true (per essere un html autonomo fuori dalla cartella)
+
+es:
+
+```yaml
+---
+title: "my html"
+  format:
+    html:
+      toc: true
+      toc-title: Contents
+      toc-location: left
+      number-sections: true
+      embed-resources: true
+---
+```
+
 
 ## Colonne {.scrollable}
 
@@ -95,30 +126,31 @@ Avete visto varie immagini, ecco come le inserisco:
 
 ![](figures/magic.jpeg){fig-align="center"}
 
-## Aggiungere citazioni {.scrollable}
+## Aggiungere citazioni (pt.1)
 
-\
 
-Questo articolo mi piace molto ed è stato scritto da @cohen2013statistical, @laterraepiatta.
+Questo articolo mi piace molto ed è stato scritto da @scheel2021hypothesis, [@scheel2021hypothesis].
 
-\
 
 ```markdown
-@cohen2013statistical per cit. nel testo
-[@cohen2013statistical] per cit. tra parentesi
+@scheel2021hypothesis per cit. nel testo
+[@scheel2021hypothesis] per cit. tra parentesi
 ```
 
-\
 
-:::{style="font-size: .8em; text-align: left"}
+Le references vengono poi in automatico messe per esteso alla fine del fine. Per creare un file .bib, aprire un nuovo file di testo e salvarlo con l'estensione .bib. Importante inserire nello YAML la voce:
 
-Le references vengono poi in automatico messe per esteso alla fine del fine.
+`bibliography: "nome del file"`
 
-Per creare un file .bib, aprire un nuovo file di testo e salvarlo con l'estensione .bib
+`csl: "apa"csl`
 
-Importante inserire nello YAML la voce `bibliography: "nome del file"`
 
-:::
+
+## Aggiungere citazioni (pt.2)
+
+
+
+Il file csl (Citation Style Language) che trovate in cartella vi permette di formattare correttamente in stile apa le citazioni
 
 ```{rmarkdown}
 
@@ -135,7 +167,6 @@ Importante inserire nello YAML la voce `bibliography: "nome del file"`
 ```
 
 ## Valori nel testo presi da oggetti r
-
 
 ```{r}
 #| echo = TRUE
@@ -165,6 +196,136 @@ Elenco delle correlazioni:
 - `r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`
 ```
 
+## Pannelli (visual)
+
+::: panel-tabset
+### From data (code)
+
+```{r}
+#| echo: true
+#| results: hide
+
+library(criticalESvalue)
+library(psych)
+library(psychTools)
+data("holzinger.swineford")
+Holz <- holzinger.swineford
+tt <- t.test(Holz$t01_visperc [ Holz$female == 1], Holz$t01_visperc [ Holz$female == 2])
+critical(tt)
+```
+
+### From data (output)
+
+```{r}
+#| echo: false
+#| results: markup
+
+library(criticalESvalue)
+library(psych)
+library(psychTools)
+data("holzinger.swineford")
+Holz <- holzinger.swineford
+tt <- t.test(Holz$t01_visperc [ Holz$female == 1], Holz$t01_visperc [ Holz$female == 2])
+critical(tt)
+```
+
+### From sample size (code)
+
+```{r}
+#| echo: true
+#| results: hide
+
+m1 <- 10
+m2 <- 15
+sd1 <- 5
+sd2 <- 4.25
+n <- 30
+critical_t2sp(m1 = m1, m2 = m2, sd1 = sd1, sd2 = sd2, n = n)
+```
+
+### From sample size (output)
+
+```{r}
+#| echo: false
+#| results: markup
+
+m1 <- 10
+m2 <- 15
+sd1 <- 5
+sd2 <- 4.25
+n <- 30
+critical_t2sp(m1 = m1, m2 = m2, sd1 = sd1, sd2 = sd2, n = n)
+```
+:::
+
+## Pannelli (source) {.scrollable}
+
+```markdown
+::: panel-tabset
+### From data (code)
+```
+```r
+#| echo: true
+#| results: hide
+
+library(criticalESvalue)
+library(psych)
+library(psychTools)
+data("holzinger.swineford")
+Holz <- holzinger.swineford
+tt <- t.test(Holz$t01_visperc [ Holz$female == 1], Holz$t01_visperc [ Holz$female == 2])
+critical(tt)
+```
+```markdown
+### From data (output)
+```
+```r
+#| echo: false
+#| results: markup
+
+library(criticalESvalue)
+library(psych)
+library(psychTools)
+data("holzinger.swineford")
+Holz <- holzinger.swineford
+tt <- t.test(Holz$t01_visperc [ Holz$female == 1], Holz$t01_visperc [ Holz$female == 2])
+critical(tt)
+```
+```markdown
+### From sample size (code)
+```
+
+```r
+#| echo: true
+#| results: hide
+
+m1 <- 10
+m2 <- 15
+sd1 <- 5
+sd2 <- 4.25
+n <- 30
+critical_t2sp(m1 = m1, m2 = m2, sd1 = sd1, sd2 = sd2, n = n)
+```
+
+```markdown
+### From sample size (output)
+```
+
+```r
+#| echo: false
+#| results: markup
+
+m1 <- 10
+m2 <- 15
+sd1 <- 5
+sd2 <- 4.25
+n <- 30
+critical_t2sp(m1 = m1, m2 = m2, sd1 = sd1, sd2 = sd2, n = n)
+```
+```markdown
+:::
+```
+
 ## Esercizio 
 
 - Scaricate il dataset "Sara_dataset.xlsx"
@@ -175,6 +336,39 @@ Elenco delle correlazioni:
 - inserire un'immagine
 - inserire delle citazioni tramite il file .bib
 - scrivete un piccolo paragrafo di conclusione in cui riassumete il lavoro fatto
+
+# CSS (extra)
+
+## Cos'è un file CSS?
+
+- CSS (Cascading Style Sheets) è un linguaggio usato la formattazione di un documento scritto in HTML (utilizzabile anche per revealjs).
+
+- I file CSS hanno estensione .css e contengono regole di stile applicabili agli elementi HTML.
+
+- Permette di separare il contenuto dalla presentazione dalle parti di formattazione, migliorando la manutenibilità del codice.
+
+Come inserirlo nel file quarto:
+
+```
+format:
+  html:
+    css: stile.css
+```
+
+## Esempio illustrativo
+
+Il file .css è come un foglio di testo dove inserire i parametri di formattazione del vostro file html. Un brevissimo esempio:
+
+```
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+h1 {
+  color: darkred;
+  text-align: center;
+}
+```
 
 ## References
 
