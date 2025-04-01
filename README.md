@@ -6,11 +6,13 @@ Link git
 
 https://www.atlassian.com/git/tutorials/install-git
 
-Per clonare una repository:
+Per clonare una repository (scrivere il codice dove si vuole che finisca la cartella):
 
 - git clone "link_https_copiato_da_github"
 
-per aggiornare la repo github fare:
+Questi passaggi invece devono essere fatti nel terminale aperto nella cartella che si è scaricata:
+
+Per aggiornare la repo github fare:
 
 - git add . (Per aggiornare tutti i file, è possibile anche aggiornare solo dei file singoli scrivendo il nome del file al posto del punto)
 
@@ -21,6 +23,10 @@ per aggiornare la repo github fare:
 Per scaricare dal sito cambiamenti fatti da altri:
 
 - git pull
+
+Per controllare se la cartella è aggiornata con la repo online:
+
+- git status
 
 
 
