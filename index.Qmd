@@ -41,7 +41,7 @@ Fondamentale:
 
 Documenti:
 
--   HTML in Quarto [**sito**](https://quarto.org/docs/get-started/hello/rstudio.html){target="_blank"}
+-   HTML in Quarto [**sito**](https://quarto.org/docs/output-formats/html-basics.html){target="_blank"}
 
 -   PDF in Quarto [**sito**](https://quarto.org/docs/output-formats/pdf-basics.html){target="_blank"}
 
