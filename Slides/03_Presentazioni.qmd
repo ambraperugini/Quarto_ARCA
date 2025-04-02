@@ -1,0 +1,254 @@
+---
+title: "Presentazione Revealjs"
+author: "Ambra Perugini"
+format:
+  revealjs:
+    code-line-numbers: false
+    theme: default
+    slide-number: c/t
+    transition: slide
+    background-transition: fade
+    footer: "ambra.perugini@phd.unipd.it"
+    logo: "figures/psicostatLogo.png"
+    incremental: false
+    self-contained: true
+    embed-resources: true
+    code-fold: false
+    code-summary: "Show code"
+    code-overflow: wrap
+    toc: true 
+    bibliography: bibliography.bib
+    csl: apa.csl
+    title-slide-attributes: 
+     data-background-image: "figures/psicostatLogo.png"
+     data-background-size: "contain"
+     data-background-opacity: "0.15"
+execute:
+  echo: true
+  output: true
+---
+
+## Iniziamo
+
+-   per la presentazione utilizzeremo revealjs in Quarto
+-   massima flessibilità
+-   slides dinamiche
+-   integrazione testo e codice e/o grafici
+-   possibilità di avere pannelli scorrevoli, colonne, più pannelli in una slide
+
+## Getting started (YAML) {.smaller}
+
+``` yaml
+---
+title: "Report analisi"
+author: "Nome Cognome"
+format: revealjs
+bibliography: bibliography.bib
+csl: apa.csl
+theme: default
+---
+```
+
+Come per l'html, potete specificare altri parametri nello YAML:
+
+. . .
+
+-   toc,
+-   embed-resources,
+
+. . .
+
+-   slide-number
+-   [Più opzioni](https://quarto.org/docs/reference/formats/presentations/revealjs.html)
+
+per mettere una pausa tra due parti di testo e farle apparire in differita: `. . .`
+
+## Cosa si può aggiungere? {transition="convex"}
+
+::: {.incremental}
+-   {.smaller} per rimpicciolire contenuto di una slide
+-   {.scrollable} per rendere la slide scorribile
+-   footer (nota a pie di pagina in tutte le slide se nello YAML, o nelle singole slides con :::{.footer}testo_della_nota:::)
+-   e molto ancora
+:::
+
+. . .
+
+```
+::: {.notes}
+Speaker notes go here.
+:::
+```
+
+:::{.footer}
+
+Nota a titolo esemplificativo
+
+:::
+
+## Themes {.smaller}
+
+Da inserire nello YAML:
+
+:::{style="color:purple;"}
+- beige
+- blood
+- dark
+- default
+- league
+- moon
+- night
+- serif
+- simple
+- sky
+- solarized
+:::
+
+## Evidenziare righe di codice {.smaller}
+
+```{.r code-line-numbers="|1|9"}
+x <- rnorm(30,10,2)
+y <- x + rnorm(30,0,1)
+z <- y*.5 + rnorm(30,0,1)
+cor(x,y)
+cor(y,z)
+cor(x,z)
+plot(x,y)
+plot(y,z)
+plot(x,z)
+```
+
+
+
+
+`code-line-numbers="7,9"` per evidenziare solo 7 e 9
+
+`code-line-numbers="7|9"` per evidenziare prima 7 e poi 9
+
+`code-line-numbers="|7|9"` per avere prima tutto, poi 7 e poi 9
+
+
+## Evidenziare righe di codice
+:::{.fragment .fade-in-then-out}
+![](figures/high.png)
+:::
+
+## Output display {.scrollable}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+
+
+x <- rnorm(30,10,2)
+y <- x + rnorm(30,0,1)
+z <- y*.5 + rnorm(30,0,1)
+cor(x,y)
+cor(y,z)
+cor(x,z)
+plot(x,y)
+plot(y,z)
+plot(x,z)
+```
+
+## Output display 
+
+E' possibile far vedere l'output del codice in diversi modi usando dopo #| output-location :
+
+- fragment (visibile dopo che si va avanti con la slide cliccando)
+
+- slide (in una nuova slide)
+
+- column (in colonna accanto al codice)
+
+- column-fragment (in colonna accanto al codice non appena si clicca per andare avanti)
+
+## Colorare singola slide {background-color="#f984ad"}
+
+Basta aggiungere dopo il titolo della slide {background-color="#f984ad"}
+
+## Posizione e dimensioni immagine {.smaller}
+
+`![](figures/letsgo.jpeg){.absolute bottom=0 right=50 width="300" height="300"}`
+
+![](figures/letsgo.jpeg){.absolute bottom=0 right=50 width="250" height="150"
+
+## Animazione {auto-animate="true"}
+
+```r
+
+x <- rnorm(30,10,2)
+y <- x + rnorm(30,0,1)
+z <- y*.5 + rnorm(30,0,1)
+
+```
+
+
+## Animazione {auto-animate="true"}
+
+```r
+
+x <- rnorm(30,10,2)
+y <- x + rnorm(30,0,1)
+z <- y*.5 + rnorm(30,0,1)
+
+cor(x,y)
+cor(y,z)
+cor(x,z)
+plot(x,y)
+plot(y,z)
+plot(x,z)
+```
+
+{auto-animate="true"} dopo il titolo
+
+## Autoanimazione 2 {auto-animate="true"}
+
+Questo testo è qui ma si sposterà
+
+## Autoanimazione 2 {auto-animate="true"}
+
+\
+
+Per lasciare il posto a questo testo
+
+\
+
+Questo testo è qui ma si sposterà
+
+## {}
+
+Per inserire altri tipi di animazione o avere più informazioni su impostazioni avanzate revealjs:
+
+\
+
+::: {style="text-align: center;"}
+[link al sito](https://quarto.org/docs/presentations/revealjs/advanced.html){style="color:purple;"}
+:::
+
+## Esercizio {.smaller}
+
+Fare delle slide con i seguenti elementi:
+
+-   transizioni tra una slide e l'altra
+
+-   inserire indice
+
+-   fare in modo che il file sia autonomo (embed-resources nello YAML)
+
+-   elenchi puntati incrementali
+
+-   inserimento di almeno un'immagine che compare con'un animazione
+
+-   non usare il tema di default
+
+-   inserire numerazione delle slides
+
+-   inserire nota a piè di pagina
+
+- far vedere del codice nelle slides e evidenziare solo alcune righe
+
+- inserire una auto-animazione
+
+
+
