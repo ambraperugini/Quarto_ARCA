@@ -55,6 +55,7 @@ Come per l'html, potete specificare altri parametri nello YAML:
 
 -   toc,
 -   embed-resources,
+-   incremental (true or false) per avere punti dell'elenco puntato che compaiono uno per volta)
 
 . . .
 
@@ -151,7 +152,7 @@ plot(y,z)
 plot(x,z)
 ```
 
-## Output display 
+## Output display {.unlisted}
 
 E' possibile far vedere l'output del codice in diversi modi usando dopo #| output-location :
 
@@ -184,7 +185,7 @@ z <- y*.5 + rnorm(30,0,1)
 ```
 
 
-## Animazione {auto-animate="true"}
+## Animazione {.unlisted auto-animate="true"} 
 
 ```r
 
@@ -206,7 +207,7 @@ plot(x,z)
 
 Questo testo è qui ma si sposterà
 
-## Autoanimazione 2 {auto-animate="true"}
+## Autoanimazione 2 {.unlisted auto-animate="true"} 
 
 \
 
@@ -216,7 +217,7 @@ Per lasciare il posto a questo testo
 
 Questo testo è qui ma si sposterà
 
-## {}
+## {.unlisted}
 
 Per inserire altri tipi di animazione o avere più informazioni su impostazioni avanzate revealjs:
 
@@ -232,7 +233,7 @@ Fare delle slide con i seguenti elementi:
 
 -   transizioni tra una slide e l'altra
 
--   inserire indice
+-   inserire indice e cambiargli il nome
 
 -   fare in modo che il file sia autonomo (embed-resources nello YAML)
 
