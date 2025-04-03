@@ -2,6 +2,8 @@
 
 This page hosts the materials of the course of Rmarkdown using Quarto, the course is held in Italian, therefore materials will be in Italian.
 
+COme settare github e comandi base per il terminale:
+
 Link git
 
 https://www.atlassian.com/git/tutorials/install-git

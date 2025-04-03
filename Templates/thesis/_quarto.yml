@@ -1,0 +1,28 @@
+project:
+  type: book
+
+book:
+  title: "La mia bellissima tesi"
+  author: "Nome Bellissimo"
+  date: "4/3/2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  pdf:
+    documentclass: book
+    papersize: a4
+    fontsize: 12pt
+    margin-left: 1.5in   # Adjust margins for binding
+    margin-right: 1in
+    toc: true            # Table of Contents
+    number-sections: true
+    colorlinks: true    
+    fontfamily: times
+
+
