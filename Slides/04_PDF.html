@@ -1176,23 +1176,23 @@ Ambra Perugini
 </p>
 <pre><code>quarto render</code></pre>
 </section>
-<section id="getting-started-yaml" class="slide level2">
-<h2>Getting started (YAML)</h2>
+<section id="getting-started-_quarto.yml" class="slide level2">
+<h2>Getting started (_quarto.yml)</h2>
+<p>Inserire nel file _quarto.yml</p>
 <pre><code>project:
   type: book
 
 book:
-  title: &quot;Your Thesis Title&quot;
-  author: &quot;Your Name&quot;
-  date: &quot;April 2025&quot;
+  title: &quot;La mia bellissima tesi&quot;
+  author: &quot;Nome Bellissimo&quot;
+  date: &quot;4/3/2025&quot;
   chapters:
     - index.qmd
-    - introduction.qmd
-    - methods.qmd
-    - results.qmd
-    - discussion.qmd
-    - conclusion.qmd
+    - intro.qmd
+    - summary.qmd
     - references.qmd
+
+bibliography: references.bib
 
 format:
   pdf:
@@ -1203,7 +1203,12 @@ format:
     margin-right: 1in
     toc: true            # Table of Contents
     number-sections: true
-    colorlinks: true     # Color for hyperlinks</code></pre>
+    colorlinks: true    
+    fontfamily: times
+</code></pre>
+</section>
+<section id="getting-started-index.qmd" class="slide level2">
+<h2>Getting started (index.qmd)</h2>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
