@@ -30,6 +30,9 @@ Per controllare se la cartella è aggiornata con la repo online:
 
 - git status
 
+Link all'overleaf della mia tesi di laurea:
+
+https://www.overleaf.com/read/kbbqkxyhhzsk#00cef6
 
 
 
