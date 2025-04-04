@@ -4,11 +4,13 @@ project:
 book:
   title: "La mia bellissima tesi"
   author: "Nome Bellissimo"
-  date: "4/3/2025"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
+    - chapter1.qmd
+    - chapter2.qmd
+    - chapter3.qmd
+    - chapter4.qmd
+    - discussion.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -20,6 +22,10 @@ format:
     fontsize: 12pt
     margin-left: 1.5in   # Adjust margins for binding
     margin-right: 1in
+    include-in-header: 
+      text: |
+        \usepackage{setspace}
+    include-before-body: Frontespizio.tex
     toc: true            # Table of Contents
     number-sections: true
     colorlinks: true    

@@ -1,0 +1,82 @@
+\begin{titlepage} 
+\begin{center}
+% Upper part of the page
+\includegraphics[scale=.45]{000_Front/logoRed.eps}
+\\
+\vspace{0.25cm}
+\textsc{\Large Università degli Studi di Padova}\\
+\vspace{0.50cm}
+\textsc{\large Dipartimento di Filosofia, Sociologia, Pedagogia e Psicologia Applicata}\\
+\textsc{\large Dipartimento di Psicologia dello sviluppo e della Scocializzazione}\\
+\vspace{0.50cm} 
+\textsc{\large Laurea Magistrale in Psicologia Sociale, del Lavoro e delle Organizzazioni}\hspace{0.8cm}\\
+  
+% Title
+\vspace{1.50cm}
+\huge \doublespacing \bfseries \begin{spacing}{1}{Dyslexia Polygenic Score prediction of Specific Cognitive Abilities}\end{spacing}
+\vfill
+\begin{minipage}[c]{0.48\linewidth}
+    \begin{flushleft} \large
+    \emph{Relatore:} \\
+    Prof. Massimiliano \textsc{Pastore}
+\end{flushleft}
+\end{minipage}%
+\hfill%
+\begin{minipage}[c]{0.48\linewidth}
+    \begin{flushright} \large
+    \emph{Laureanda:}\\
+    Ambra \textsc{Perugini}
+
+    \textsc{N. 2015584}
+    \end{flushright}
+    \vfill
+\end{minipage}
+
+
+% \hfill
+\vfill
+ 
+% Bottom of the page
+{\small Anno accademico 2021/2022} 
+\end{center}
+
+
+\pagenumbering{gobble}
+
+\null\newpage
+\cleardoublepage
+\begin{flushright}
+\null\vspace{\stretch {1}}
+\emph{
+To my son}
+\vspace{\stretch{2}}\null
+\end{flushright}
+
+
+
+
+
+
+\newpage
+\thispagestyle{empty}
+%\null                                     % This command is weird. It's basically an invisible thing that gives sense to the commands. In this case
+%\newpage                             % i wanted a white page after the title page, so i can have the index on a right page. Two \newpage 
+                                           % commands wont do the job because they will be seen as just one from Latex. The \null command
+                                           % emulates the presence of something to justify a new page.
+
+\newpage
+\null                         % This command is weird. It's basically an invisible thing that gives sense to the commands. In this case
+
+
+\end{titlepage}
+\pagestyle{plain}
+\pagenumbering{roman}        % Roman page numbers (and reset to 1)
+\tableofcontents                   % Make the Index based on the names of the sections/subsections/subsubsections
+
+\newpage
+
+\input{001_Chapters/Abstract.tex}
+\null
+\newpage
+\pagenumbering{arabic}        % Roman page numbers (and reset to 1)
+\restoregeometry
