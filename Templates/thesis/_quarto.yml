@@ -2,8 +2,6 @@ project:
   type: book
 
 book:
-  title: "La mia bellissima tesi"
-  author: "Nome Bellissimo"
   chapters:
     - index.qmd
     - chapter1.qmd
