@@ -55,6 +55,10 @@ Presentazioni ([overview](https://quarto.org/docs/presentations/){target="_blank
 
 -   PDF in Quarto[**sito**](https://quarto.org/docs/presentations/beamer.html){target="_blank"}
 
+### Slides:
+
+- [Slides HTML](Slides/01_Introduzione.html)
+
 ------------------------------------------------------------------------
 
 ::: {style="font-size:11px;"}
