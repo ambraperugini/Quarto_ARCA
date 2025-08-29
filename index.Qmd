@@ -33,6 +33,17 @@ Fondamentale:
 2.  Aver installato Latex così da poter compilare i pdf, fondamentale per seguire gli esercizi in aula [**pagina per il download**](https://www.latex-project.org/get/){target="_blank"}
 3.  Aver controllato che sia RStudio che la compilazione dei PDF funzionino correttamente, per Rmarkdown basta compilare in pdf il file di esempio che viene generato aprendo un nuovo documento.
 
+### Slides:
+
+- [01 - Introduction](Slides/01_Introduzione.html)
+
+- [02 - Reports in HTML](Slides/02_Reports_HTML.html)
+
+- [03 - Presentazioni](Slides/03_Presentazioni.html)
+
+- [04 - PDF](Slides/04_PDF.html)
+
+
 ### Link utili
 
 -   R Markdown [**sito**](https://rmarkdown.rstudio.com){target="_blank"}
@@ -55,15 +66,6 @@ Presentazioni ([overview](https://quarto.org/docs/presentations/){target="_blank
 
 -   PDF in Quarto[**sito**](https://quarto.org/docs/presentations/beamer.html){target="_blank"}
 
-### Slides:
-
-- [01 - Introduction](Slides/01_Introduzione.html)
-
-- [02 - Reports in HTML](Slides/02_Reports_HTML.html)
-
-- [03 - Presentazioni](Slides/03_Presentazioni.html)
-
-- [04 - PDF](Slides/04_PDF.html)
 
 
 ------------------------------------------------------------------------
