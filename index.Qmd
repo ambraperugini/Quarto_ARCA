@@ -57,7 +57,14 @@ Presentazioni ([overview](https://quarto.org/docs/presentations/){target="_blank
 
 ### Slides:
 
-- [Slides HTML](Slides/01_Introduzione.html)
+- [01 - Introduction](Slides/01_Introduzione.html)
+
+- [02 - Reports in HTML](Slides/02_Reports_HTML.html)
+
+- [03 - Presentazioni](Slides/03_Presentazioni.html)
+
+- [04 - PDF](Slides/04_PDF.html)
+
 
 ------------------------------------------------------------------------
 
