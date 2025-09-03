@@ -1,5 +1,5 @@
 ---
-title: "Corso di Rmarkdown in Quarto"
+title: "RMarkdown. Analisi riproducibili, presentazioni, report"
 subtitle: "Corso ARCA"
 author: "Ambra Perugini"
 include-in-header: assets/header.html
@@ -35,14 +35,13 @@ Fondamentale:
 
 ### Slides:
 
-- [01 - Introduction](Slides/01_Introduzione.html)
+-   [01 - Introduction](Slides/01_Introduzione.html)
 
-- [02 - Reports in HTML](Slides/02_Reports_HTML.html)
+-   [02 - Reports in HTML](Slides/02_Reports_HTML.html)
 
-- [03 - Presentazioni](Slides/03_Presentazioni.html)
+-   [03 - Presentazioni](Slides/03_Presentazioni.html)
 
-- [04 - PDF](Slides/04_PDF.html)
-
+-   [04 - PDF](Slides/04_PDF.html)
 
 ### Link utili
 
@@ -65,8 +64,6 @@ Presentazioni ([overview](https://quarto.org/docs/presentations/){target="_blank
 -   Powerpoint in Quarto[**sito**](https://quarto.org/docs/presentations/powerpoint.html){target="_blank"}
 
 -   PDF in Quarto[**sito**](https://quarto.org/docs/presentations/beamer.html){target="_blank"}
-
-
 
 ------------------------------------------------------------------------
 
