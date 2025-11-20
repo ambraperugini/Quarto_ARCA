@@ -15,7 +15,8 @@ format:
 editor: source
 ---
 
-Questo corso ha l'obiettivo di gettare le basi per imparare ad utilizzare Rmarkdown e Quarto per pdf, presentazioni e file html. Le lezioni saranno esclusivamente in presenza da lunedì 31 Marzo a venerdì 4 Aprile.
+
+## Orario Lezioni e Aula
 
 | Date       | Orario        | Aula   |
 |------------|---------------|--------|
