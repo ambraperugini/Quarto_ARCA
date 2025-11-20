@@ -1,56 +1,164 @@
 ---
-title: "Introduzione a R Markdown e Quarto"
+title: "Introduzione a RMarkdown e Quarto"
 author: "Ambra Perugini"
 format:
   revealjs:
     css: custom.css
     code-line-numbers: false
     theme: default
+    logo: "figures/psicostatLogo.png"
     slide-number: c/t
     self-contained: true
     code-fold: false
     code-summary: "Show code"
     code-overflow: wrap
-    title-slide-attributes: 
-     data-background-image: "figures/psicostatLogo.png"
-     data-background-size: "contain"
-     data-background-opacity: "0.15"
+    include-in-header:
+      - text: |
+          <style>
+          #title-slide .title {
+            font-size: 3.2em;
+            color: #9B0014;
+          }
+          .slide-logo {
+            height: 60px !important;
+            max-height: none !important;
+            position: absolute !important;
+            bottom: 10px !important;
+            right: 10px !important;
+            top: unset !important;
+            left: unset !important;
+          }
+          </style>
+
 execute:
   echo: true
   output: true
+editor: source
 ---
 
-## Github
+# Github
 
-Come settare github e comandi base per il terminale:
+## Cos'è Github
 
-Per clonare una repository (scrivere il codice dove si vuole che finisca la cartella):
+- GitHub è un **sito web** dove teniamo i file dei nostri progetti.
+- Permette di:
+  - Salvare le **diverse versioni** dei file
+  - Tornare indietro se qualcosa si rompe
+  - **Condividere** e collaborare
+  - Tenere sincronizzato il lavoro tra computer diversi
 
-- git clone "link_https_copiato_da_github"
+> In questo corso useremo Github per gestire i file dei nostri progetti Quarto.
 
-Questi passaggi invece devono essere fatti nel terminale aperto nella cartella che si è scaricata:
+## Cos'è Github Desktop
 
-Per aggiornare la repo github fare:
+- GitHub Desktop è un **programma** che collegheremo a GitHub.
+- Serve per:
+  - Scaricare i file dal repository online
+  - Salvare le modifiche e inviarle su GitHub
+  - Aggiornare il progetto quando il docente cambia qualcosa
+- Tutto questo **senza usare il terminale**.
 
-- git add . (Per aggiornare tutti i file, è possibile anche aggiornare solo dei file singoli scrivendo il nome del file al posto del punto)
+> È pensato proprio per chi non è informatico e vuole un'interfaccia grafica semplice.
 
-- git commit -m"Il_mio_commento"
+## Clonare la repository del corso
 
-- git push (per renderli visibili sul sito github)
+Per avere i file del corso sul proprio computer:
 
-Per scaricare dal sito cambiamenti fatti da altri:
+1. Andare su **Github** nel browser
+2. Aprire la **repository del corso**
+3. Cliccare sul pulsante **`Code`**
+4. Selezionare **“Open with Github Desktop”**
+5. Si aprirà Github Desktop
+6. Scegliere la cartella sul computer dove salvare il progetto
+7. Cliccare **`Clone`**
 
-- git pull
+> Ora avete una copia locale della repository e potete aprire i file .qmd con Quarto.
 
-Per controllare se la cartella è aggiornata con la repo online:
+## Il workflow principale (sempre lo stesso)
 
-- git status
+Ogni volta che modificate i file del progetto:
 
-Link all'overleaf della mia tesi di laurea:
+1. Aprite i file (es. `.qmd`) e **fate le vostre modifiche**
+2. Salvate i file
+3. Tornate su **Github Desktop**
+4. Nella sezione **Changes** vedrete l’elenco dei file modificati
+5. In basso, scrivete un breve messaggio di **Commit**  
+   - Esempio: `Aggiunta sezione risultati`
+6. Cliccate il pulsante **`Commit to main`** (o nome del branch)
+7. Poi cliccate **`Push origin`**
 
-https://www.overleaf.com/read/kbbqkxyhhzsk#00cef6
+> Così le vostre modifiche vengono inviate e salvate su Github.
 
+## Ricevere aggiornamenti dal docente
 
+Se aggiorno i materiali del corso:
+
+1. Aprite **Github Desktop**
+2. Selezionate la repository del corso
+3. Cliccate **`Fetch origin`**
+4. Se ci sono novità, cliccate **`Pull origin`** per scaricarle
+
+> In questo modo la vostra cartella locale rimane **allineata** alla versione online.
+
+## Capire lo stato del progetto
+
+In Github Desktop potete vedere a colpo d’occhio:
+
+- Se ci sono **file modificati** (sezione *Changes*)
+- Se ci sono commit da inviare su Github
+- Se siete allineati con la versione online (dopo *Fetch / Pull*)
+
+Vantaggi rispetto al terminale:
+
+- Non servono comandi da ricordare
+- Tutto è visibile con un’interfaccia grafica
+- È più difficile “rompere” qualcosa per errore
+
+## Creare la propria repository (progetto) {.smaller}
+
+Oltre a clonare la repository del corso, potete anche creare un vostro progetto su Github.
+
+**Come crearla:**
+
+1. Andare su **Github** (sito web)
+2. Cliccare su **New repository**
+3. Scegliere:
+   - **Nome del progetto** (es. `progetto-psicologia`)
+   - Una breve descrizione (opzionale)
+4. Scegliere la **visibilità**:
+   - **Public** → chiunque può vedere il progetto  
+   - **Private** → lo vedete solo voi (o persone che invitate)
+5. Cliccare **Create repository**
+
+**Poi:**
+- Potete aprire la repository in **Github Desktop**
+- Oppure creare i file direttamente sul computer e poi collegarla
+
+> Per progetti personali o autonomi è consigliato iniziare con una repository *privata*.
+
+<!-- ## Come settare Github e comandi base da terminale {.smaller} -->
+
+<!-- Per clonare una repository (scrivere il codice dove si vuole che finisca la cartella): -->
+
+<!-- - git clone "link_https_copiato_da_github" -->
+
+<!-- Per aggiornare la repo github fare: -->
+
+<!-- - git add . (Per aggiornare tutti i file, è possibile anche aggiornare solo dei file singoli scrivendo il nome del file al posto del punto) -->
+
+<!-- - git commit -m"Il_mio_commento" -->
+
+<!-- - git push (per renderli visibili sul sito github) -->
+
+<!-- Per scaricare dal sito cambiamenti fatti da altri: -->
+
+<!-- - git pull -->
+
+<!-- Per controllare se la cartella è aggiornata con la repo online: -->
+
+<!-- - git status -->
+
+# RMarkdown e Quarto
 
 ## Perché usare un linguaggio di markup?
 
@@ -84,6 +192,32 @@ https://www.overleaf.com/read/kbbqkxyhhzsk#00cef6
 
 ![](figures/outputs.png){fig-align="center"}
 
+---
+
+## Quarto vs RMarkdown: differenze principali {.smaller}
+
+| Caratteristica | **Quarto** | **RMarkdown** |
+|----------------|------------|----------------|
+| **Dipendenza dal linguaggio** | Indipendente; funziona con R, Python, Julia, ObservableJS | Legato principalmente a **R** e al sistema **knitr** |
+| **Estensione dei file** | `.qmd` | `.Rmd` |
+| **Motore di rendering** | Motore unificato Quarto (basato su Pandoc) | `rmarkdown` + `knitr` + Pandoc |
+| **Supporto multi-linguaggio** | Nativo e fluido (più linguaggi nello stesso documento) | Principalmente R, supporto Python più limitato |
+| **Progetti e siti web** | Supporto integrato per progetti, siti, libri, blog | Richiede pacchetti diversi (bookdown, blogdown, xaringan…) |
+
+## Quarto vs RMarkdown: differenze principali {.smaller}
+
+| Caratteristica | **Quarto** | **RMarkdown** |
+|----------------|------------|----------------|
+| **Cross-reference e citazioni** | Integrate e semplici da usare | Spesso richiedono configurazioni o pacchetti aggiuntivi |
+| **Formati di output** | Sistema unificato (documenti, presentazioni, siti, libri) | Diversi pacchetti per diversi formati |
+| **Stile di configurazione** | YAML più chiaro e coerente | YAML più frammentato a seconda del formato |
+| **Prospettiva futura** | Moderno, attivamente sviluppato, consigliato per nuovi progetti | Mantenuto per compatibilità, evoluzione più lenta |
+
+### In sintesi  
+**Quarto è l’evoluzione moderna e unificata di RMarkdown**, più potente, più flessibile e non legata solo al linguaggio R.
+
+
+
 ## Cosa faremo durante il corso?
 
 - Report dinamici con dati aggiornabili automaticamente
@@ -104,7 +238,7 @@ https://www.overleaf.com/read/kbbqkxyhhzsk#00cef6
 
 1. Apri **RStudio** e vai su `File -> New Project`
 
-2. Scegli **New Directory** e poi `Quarto Project` o `R Markdown`
+2. Scegli **New Directory** e poi `Quarto Project``
 
 3. Seleziona la cartella di destinazione e dai un nome al progetto
 
@@ -112,91 +246,119 @@ https://www.overleaf.com/read/kbbqkxyhhzsk#00cef6
 
 ![](figures/repo.png){fig-align="center"}
 
-# Struttura di un file Quarto (.qmd) o R Markdown (.Rmd)
+# Struttura di un file Quarto (.qmd) 
 
-## 1. YAML (testata del documento) {.scrollable}
+# 1. YAML
 
-Definisce il titolo, autore, formato di output e altre opzioni:
+## YAML: opzioni principali
+
+La testata **YAML** permette di definire:
+
+::: {style="font-size: .8em;"}
+
+- `title`: titolo del documento  
+- `subtitle`: sottotitolo  
+- `author`: autore/i  
+- `date`: data  
+- `output`: formato di output  
+- `theme`: tema grafico  
+- `fontcolor`: colore del testo  
+- `fig-width`: larghezza predefinita delle figure  
+- `code-fold`: piegatura del codice (`true/false`)  
+- `toc`: indice dei contenuti (`true/false`)  
+- `number-sections`: numerazione sezioni  
+
+:::
+
+## YAML: tipi di output
+
+- `html_document`
+- `pdf_document`
+- `word_document`
+- `revealjs`
+- `pptx`
+- `beamer`
+
+È possibile specificare più output in un solo yaml così che il documento venga renderizzato contemporaneamente in più formati.
+
+# 2. Corpo del documento 
+
+## Corpo del documento: Titoli e sottotitoli
+
+\
+
+\# Titolo principale
+
+\#\# Sottotitolo di primo livello
+
+\#\#\# Sottotitolo di secondo livello
+
+\#\#\#\# Sottotitolo di terzo livello
 
 
-```yaml
----
-title: "Analisi dei dati"
-author: "Nome Cognome"
-date: "`r Sys.Date()`"
-output: html_document
----
-```
+## Corpo del documento: Paragrafi e formattazione del testo
 
-Tipi di output:
+\
 
-- pdf_document
-- html_document
-- word_document
+Questo è un \*\*paragrafo di esempio\*\* con testo in grassetto.
 
+Si può anche usare \*corsivo\* o \`testo con font monospaziato\`.
 
-Altre opzioni:
+\
 
-- `subtitle` 
-- `theme`
-- `fontcolor`
-- `fig-width`
-- `code-fold`
-
-## 2. Corpo del documento {.scrollable}
-
-Testo in Markdown (e Quarto) per strutturare il contenuto:
-
-**Titoli e sottotitoli**
-
-```markdown
-# Titolo principale
-## Sottotitolo di primo livello
-### Sottotitolo di secondo livello
-#### Sottotitolo di terzo livello
-```
-
-**Paragrafi e formattazione del testo**
-
-```markdown
 Questo è un **paragrafo di esempio** con testo in grassetto.
 
 Si può anche usare *corsivo* o `testo con font monospaziato`.
-```
 
-**Liste puntate e numerate**
 
-```markdown
+## Corpo del documento: Liste puntate e numerate
+
+\
+
+\- Elemento 1
+
+\- Elemento 2
+
+\- Elemento 3
+  
+\- Elemento 4
+
+\
+
 - Elemento 1
-- Elemento 2
-  - Sotto-elemento 2.1
-  - Sotto-elemento 2.2
 
-1. Primo punto
-2. Secondo punto
-3. Terzo punto
-```
+- Elemento 2
+
+- Elemento 3
+  
+- Elemento 4
 
 ## 3. Blocchi di codice
 
 Si usano per inserire codice ed eseguire analisi:
-
-```r
-
-#| warning: false
-#| include: false
-#| eval: false
-#| echo: false
-summary(cars)
-
-```
 
 - warning: se false, non fa vedere i warning del modello e/o funzione
 - include: nel repoprt o documento si vede oppure no l'ouput
 - eval: se true gira il codice, se false non gira proprio
 - echo: false -> non si vede il codice, se echo -> true si vede il codice che avete utilizzato
 
-Per settare opzioni dei chunk in **Quarto**, in stile YAML, utilizzare #| all'inizio di riga dentro il chunk. In R Markdown invece inserire le informazioni dentro `{r message = false, echo = false}`
+## 3. Blocchi di codice
+
+\`\`\`r
+
+#| warning: false
+
+#| include: false
+
+#| eval: false
+
+#| echo: false
+
+summary(cars)
+
+\`\`\`
+
+Per settare opzioni dei chunk in **Quarto**, in stile YAML, utilizzare #| all'inizio di riga dentro il chunk. 
 
 ## Inserire formule
 

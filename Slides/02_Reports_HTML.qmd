@@ -6,6 +6,7 @@ format:
     css: custom.css
     code-line-numbers: false
     theme: default
+    logo: "figures/psicostatLogo.png"
     bibliography: "bibliography.bib"
     bibliographystyle: apa
     csl: "apa.csl"
@@ -15,13 +16,27 @@ format:
     code-fold: false
     code-summary: "Show code"
     code-overflow: wrap
-    title-slide-attributes: 
-     data-background-image: "figures/psicostatLogo.png"
-     data-background-size: "contain"
-     data-background-opacity: "0.15"
+    include-in-header:
+          - text: |
+              <style>
+              #title-slide .title {
+                font-size: 3.2em;
+                color: #9B0014;
+              }
+              .slide-logo {
+                height: 60px !important;
+                max-height: none !important;
+                position: absolute !important;
+                bottom: 10px !important;
+                right: 10px !important;
+                top: unset !important;
+                left: unset !important;
+              }
+              </style>
 execute:
   echo: true
   output: true
+editor: source
 ---
 
 
