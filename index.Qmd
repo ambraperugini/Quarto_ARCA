@@ -12,18 +12,18 @@ format:
     code-fold: false 
     message: false
     css: "assets/custom.css"
-editor: visual
+editor: source
 ---
 
 Questo corso ha l'obiettivo di gettare le basi per imparare ad utilizzare Rmarkdown e Quarto per pdf, presentazioni e file html. Le lezioni saranno esclusivamente in presenza da lunedì 31 Marzo a venerdì 4 Aprile.
 
-| Date       | Orario        | Aula |
-|------------|---------------|------|
-| 31/03/2025 | 9:00 - 13:00  | 4R   |
-| 01/04/2025 | 9:00 - 13:00  | 4R   |
-| 02/04/2025 | 13:00 - 17:00 | 4R   |
-| 03/04/2025 | 8:30 - 12:30  | 4M   |
-| 04/04/2025 | 9:00 - 13:00  | 4R   |
+| Date       | Orario        | Aula   |
+|------------|---------------|--------|
+| 24/11/2025 | 9:00 - 13:00  | ARCA   |
+| 25/11/2025 | 9:00 - 13:00  | ARCA   |
+| 26/11/2025 | 9:00 - 13:00  | ARCA   |
+| 27/11/2025 | 8:30 - 12:30  | ARCA   |
+| 28/11/2025 | 9:00 - 13:00  | ARCA   |
 
 ### Prima di iniziare il corso
 
@@ -32,6 +32,7 @@ Fondamentale:
 1.  Aver installato R e RStudio [**pagina per il download**](https://posit.co/download/rstudio-desktop/){target="_blank"}
 2.  Aver installato Latex così da poter compilare i pdf, fondamentale per seguire gli esercizi in aula [**pagina per il download**](https://www.latex-project.org/get/){target="_blank"}
 3.  Aver controllato che sia RStudio che la compilazione dei PDF funzionino correttamente, per Rmarkdown basta compilare in pdf il file di esempio che viene generato aprendo un nuovo documento.
+4. Aver creato un account github; non serve l'account per accedere ai materiali ma serve per tenere le vostre versioni dei materiali remote aggiornate in comodità. E' anche dove caricherete le vostre creazioni ;)
 
 ### Slides:
 
@@ -49,7 +50,7 @@ Fondamentale:
 
 -   Quarto [**sito**](https://quarto.org/docs/get-started/hello/rstudio.html){target="_blank"}
 
-Documenti:
+Document types:
 
 -   HTML in Quarto [**sito**](https://quarto.org/docs/output-formats/html-basics.html){target="_blank"}
 
