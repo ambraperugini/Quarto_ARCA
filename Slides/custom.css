@@ -1,0 +1,67 @@
+
+.reveal {
+  font-size: 32px;
+}
+
+.reveal .small {
+  font-size: 26px;
+}
+
+.reveal .smaller {
+  font-size: 22px;
+}
+
+.reveal .smallest {
+  font-size: 18px;
+}
+
+.reveal pre {
+  font-size: 22px;
+}
+
+.reveal pre code {
+  color: #216D6E;
+}
+
+.reveal .small-code pre {
+  font-size: 16px;
+}
+
+.reveal .large-code pre {
+  font-size: 26px;
+}
+
+summary {
+    font-size: 22px;
+}
+
+.reveal .cell-output-error pre code {
+  color: #FF2244 !important;
+  font-style: italic;
+  font-size: 110%;
+}
+
+pre code.sourceCode {
+    background-color: #EEEEFF !important; 
+    padding: 0.2em;
+    border-radius: 5px;
+}
+span.co {
+    color: #999999 !important;
+    font-style: italic !important;
+}
+span.fu {
+    color: darkblue !important;
+}
+
+.reveal a {
+  color: #760000;
+  background-color: #ffeeee;
+  border-radius: 3px;
+  
+}
+
+.reveal ::selection {
+    background-color: #760000 !important;
+    color: white;
+}

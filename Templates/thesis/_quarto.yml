@@ -1,0 +1,32 @@
+project:
+  type: book
+
+book:
+  chapters:
+    - index.qmd
+    - chapter1.qmd
+    - chapter2.qmd
+    - chapter3.qmd
+    - chapter4.qmd
+    - discussion.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  pdf:
+    documentclass: book
+    papersize: a4
+    fontsize: 12pt
+    margin-left: 1.5in   # Adjust margins for binding
+    margin-right: 1in
+    include-in-header: 
+      text: |
+        \usepackage{setspace}
+    include-before-body: Frontespizio.tex
+    toc: true            # Table of Contents
+    number-sections: true
+    colorlinks: true    
+    fontfamily: times
+
+
