@@ -188,7 +188,7 @@ Basta aggiungere dopo il titolo della slide {background-color="#f984ad"}
 
 `![](figures/letsgo.jpeg){.absolute bottom=0 right=50 width="300" height="300"}`
 
-![](figures/letsgo.jpeg){.absolute bottom=0 right=50 width="250" height="150"
+![](figures/letsgo.jpeg){.absolute bottom=0 right=50 width="250" height="150"}
 
 ## Animazione {auto-animate="true"}
 
@@ -263,9 +263,9 @@ Fare delle slide con i seguenti elementi:
 
 -   inserire nota a piè di pagina
 
-- far vedere del codice nelle slides e evidenziare solo alcune righe
+-   far vedere del codice nelle slides e evidenziare solo alcune righe
 
-- inserire una auto-animazione
+-   inserire una auto-animazione
 
 
 

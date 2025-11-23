@@ -395,5 +395,5 @@ $$ Y = \beta_{0} + \beta_{1} X$$
 - Strumenti potenti per creare documenti chiari, riproducibili e ben formattati
 - Indispensabili per una ricerca trasparente e collaborativa
 
-![](figures/Kirby2.png)
+![](figures/Kirby2.png){.absolute bottom=20 right=320 width="450" height="420"}
 
