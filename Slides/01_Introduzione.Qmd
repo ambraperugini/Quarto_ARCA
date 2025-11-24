@@ -136,28 +136,6 @@ Oltre a clonare la repository del corso, potete anche creare un vostro progetto 
 
 > Per progetti personali o autonomi è consigliato iniziare con una repository *privata*.
 
-<!-- ## Come settare Github e comandi base da terminale {.smaller} -->
-
-<!-- Per clonare una repository (scrivere il codice dove si vuole che finisca la cartella): -->
-
-<!-- - git clone "link_https_copiato_da_github" -->
-
-<!-- Per aggiornare la repo github fare: -->
-
-<!-- - git add . (Per aggiornare tutti i file, è possibile anche aggiornare solo dei file singoli scrivendo il nome del file al posto del punto) -->
-
-<!-- - git commit -m"Il_mio_commento" -->
-
-<!-- - git push (per renderli visibili sul sito github) -->
-
-<!-- Per scaricare dal sito cambiamenti fatti da altri: -->
-
-<!-- - git pull -->
-
-<!-- Per controllare se la cartella è aggiornata con la repo online: -->
-
-<!-- - git status -->
-
 # RMarkdown e Quarto
 
 ## Perché usare un linguaggio di markup?

@@ -8,6 +8,13 @@ bibliography: "bib2.bib"
 bibliographystyle: apa
 csl: "apa.csl"
 documentclass: "apa7"
+execute: 
+  cache: true
+  echo: false
+  warning: false
+embed-resources: true
+self-contained: true
+self-contained-math: true
 ---
 
 ```{css, echo=FALSE}
@@ -19,18 +26,23 @@ documentclass: "apa7"
 
 
 ```{r}
-#| echo: false
+#| results: hide
 
 rm(list=ls())
 
 library(readxl)
 DATA <- read_xls("Sara_dataset.xls", col_names = TRUE)
 
+DATA
+
 ```
 
 ```{r}
+#| results: markup
+
 table(DATA$gender)
 ```
+
 
 ## Colonne
 
@@ -42,17 +54,18 @@ Quarto:
 
 -   Ha anche revealjs
 
--   Punto 3
+<!-- -   Punto 3 -->
 :::
 
-::: {.column width="50%"}
+::: {.column width="50%"} 
+
 Markdown:
 
 -   Fantastico
 
 -   Niente revealjs :(
 
--   Punto 3
+<!-- -   Punto 3 -->
 :::
 :::
 
@@ -65,3 +78,12 @@ L'articolo di Cohen sulla terra piatta è @laterraepiatta
 **Testo:**
 
 1.  
+
+## Analisi
+
+
+
+
+
+
+

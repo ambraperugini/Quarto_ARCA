@@ -34,10 +34,15 @@ format:
               }
               </style>
 execute:
-  echo: true
+  cache: true
+  echo: false
   output: true
 editor: source
 ---
+
+```{r}
+rm(list=ls())
+```
 
 
 ## Getting started (YAML)
@@ -63,6 +68,10 @@ output: html_document
 
 ## Parametri YAML {.smaller}
 
+:::: {.columns}
+
+::: {.column width="50%"}
+
 - toc: true (table of content)
 
 - toc-title: Contents
@@ -72,6 +81,18 @@ output: html_document
 - number-sections: true
 
 - embed-resources: true (per essere un html autonomo fuori dalla cartella)
+
+- execute: e si possono specificare per tutti i chunk dei settings di default
+
+- cache: ture (salva gli output dei chunk in un file per compilare più velocemente)
+
+- results: hide (nasconde l'output di un chunk, può essere settato anche a 'markup' per farli vedere in maniera ordinata)
+
+- echo: false (di default non fa vedere il codice dei chunk)
+
+:::
+
+::: {.column width="50%"}
 
 es:
 
@@ -85,8 +106,36 @@ title: "my html"
       toc-location: left
       number-sections: true
       embed-resources: true
+execute:
+  cache: true
+  results: hide
+  echo: false
 ---
 ```
+
+:::
+
+::::
+
+## Chunks
+
+Esempi in chunk r
+
+\```{r}
+
+\#| results: hide
+
+\#| echo: false
+
+\#| label: fig-nome_figura
+
+\#| fig-width: 8
+
+\#| fig-height: 4
+
+\#| fig-cap: Caption della vostra figura. 
+
+\```
 
 
 ## Colonne {.scrollable}
