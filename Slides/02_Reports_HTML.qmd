@@ -397,7 +397,7 @@ critical_t2sp(m1 = m1, m2 = m2, sd1 = sd1, sd2 = sd2, n = n)
 :::
 ```
 
-## Esercizio {.scrollable}
+## Esercizio {.smaller}
 
 - Scaricate il dataset "Sara_dataset.xlsx"
 - Descrivete le variabili con statistiche descrittive
@@ -415,6 +415,19 @@ Extra:
 - aggiungere fig-cap
 - aggiungere lable
 - opzionale: sistemare dimensione immagine nel chunk
+
+## Sara_dataset Variabili {.smaller}
+
+- genere dei soggetti (gender: 1 = femmine, 2= maschi)
+- tipo di laurea triennale conseguita (major: 1 = psicologia, 2 = medicina, 3 = biologia, 4 = sociologia, 5 = economia)
+- condizione sperimentale (cond: 1 = facile, ..., 4 = impossibile)
+- autovalutazione del timore verso la matematica (phobia) su scala 0-10
+- numero corsi di matematica frequentati (prevmath)
+- punteggio ad un pre-test di matematica (mathquiz)
+- punteggio ad un test di statistica (statquiz)
+- auto-misurazione del battito cardiaco in condizioni normali (hr base), prima del test (hr pre) e dopo il test (hr post)
+- punteggi ad un test sull’ansia in condizioni normali (anx base), prima del test (anx pre) e dopo il test (anx post)
+
 
 # CSS (extra)
 
