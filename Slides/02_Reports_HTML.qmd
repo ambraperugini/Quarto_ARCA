@@ -257,17 +257,15 @@ Elenco delle correlazioni:
 
 - correlazione tra Ansia pre e math quiz -> $r =$ `r cor_pre`
 
-
-```{markdown}
-- correlazione tra Ansia pre e math quiz -> $r =$ `r cor_pre`
-```
-
+````
+- correlazione tra Ansia pre e math quiz -> $r =$ `\r cor_pre\`
+````
 
 - `r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`
 
-```{markdown}
+````
 - `r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`
-```
+````
 
 ## Pannelli (visual)
 
@@ -399,7 +397,7 @@ critical_t2sp(m1 = m1, m2 = m2, sd1 = sd1, sd2 = sd2, n = n)
 :::
 ```
 
-## Esercizio 
+## Esercizio {.scrollable}
 
 - Scaricate il dataset "Sara_dataset.xlsx"
 - Descrivete le variabili con statistiche descrittive
@@ -409,6 +407,14 @@ critical_t2sp(m1 = m1, m2 = m2, sd1 = sd1, sd2 = sd2, n = n)
 - inserire un'immagine
 - inserire delle citazioni tramite il file .bib
 - scrivete un piccolo paragrafo di conclusione in cui riassumete il lavoro fatto
+
+Extra:
+
+- richiamare nel testo oggetti dell'environment di r
+- creare un immagine con i dati
+- aggiungere fig-cap
+- aggiungere lable
+- opzionale: sistemare dimensione immagine nel chunk
 
 # CSS (extra)
 
