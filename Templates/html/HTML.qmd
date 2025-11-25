@@ -10,11 +10,11 @@ csl: "apa.csl"
 documentclass: "apa7"
 execute: 
   cache: true
-  echo: false
   warning: false
 embed-resources: true
 self-contained: true
 self-contained-math: true
+code-fold: true
 ---
 
 ```{css, echo=FALSE}

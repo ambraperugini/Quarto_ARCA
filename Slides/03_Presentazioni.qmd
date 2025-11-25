@@ -62,6 +62,7 @@ format: revealjs
 bibliography: bibliography.bib
 csl: apa.csl
 theme: default
+footer: "ambra.perugini@phd.unipd.it"
 ---
 ```
 
@@ -120,6 +121,18 @@ Da inserire nello YAML:
 - sky
 - solarized
 :::
+
+## Diversi tipi di transizione
+
+- transition="convex"
+
+- transition="concave"
+
+- transition="fade"
+
+- transition="slide"
+
+- transition="zoom"
 
 ## Evidenziare righe di codice {.smaller}
 

@@ -90,6 +90,8 @@ output: html_document
 
 - echo: false (di default non fa vedere il codice dei chunk)
 
+- code-fold: true (per far vedere il codice cliccando su code)
+
 :::
 
 ::: {.column width="50%"}
@@ -418,7 +420,7 @@ Extra:
 
 ## Sara_dataset Variabili {.smaller}
 
-- genere dei soggetti (gender: 1 = femmine, 2= maschi)
+- genere dei soggetti (gender: 1 = femmine, 2 = maschi)
 - tipo di laurea triennale conseguita (major: 1 = psicologia, 2 = medicina, 3 = biologia, 4 = sociologia, 5 = economia)
 - condizione sperimentale (cond: 1 = facile, ..., 4 = impossibile)
 - autovalutazione del timore verso la matematica (phobia) su scala 0-10
