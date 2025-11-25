@@ -32,7 +32,22 @@ Fondamentale:
 
 1.  Aver installato R e RStudio [pagina per il download](https://posit.co/download/rstudio-desktop/){target="_blank"}
 2. Aver creato un account github; non serve l'account per accedere ai materiali ma serve per tenere le vostre versioni dei materiali remote aggiornate in comodità. E' anche dove caricherete le vostre creazioni ;) 
-3. Scaricare Github Desktop [da qui](https://desktop.github.com/download/)
+3. ~~Scaricare Github Desktop [da qui](https://desktop.github.com/download/)~~
+3. installa git [da qui](https://git-scm.com/install/)
+
+Comandi base di git:
+
+- git clone HTTPS (per scaricare sul computer una repository da github)
+
+- git status (per controllare se il locale è up to date)
+
+- git add . (aggiunge tutti i nuovi cambiamenti)
+
+- git commit -m"il_mio_commento" (inserire commento)
+
+- git push (manda tutto in orbita)
+
+- git pull (scaricare cose da github se la vostra cartella locale non è aggiornata)
 
 
 ### Slides:
