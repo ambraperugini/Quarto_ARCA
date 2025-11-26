@@ -1,0 +1,106 @@
+---
+title: "File PDF"
+author: "Ambra Perugini"
+format:
+  revealjs:
+    code-line-numbers: false
+    theme: default
+    slide-number: c/t
+    self-contained: true
+    embed-resources: true
+    code-fold: false
+    code-summary: "Show code"
+    code-overflow: wrap
+    include-in-header:
+          - text: |
+              <style>
+              #title-slide .title {
+                font-size: 3.2em;
+                color: #9B0014;
+              }
+              .slide-logo {
+                height: 60px !important;
+                max-height: none !important;
+                position: absolute !important;
+                bottom: 10px !important;
+                right: 10px !important;
+                top: unset !important;
+                left: unset !important;
+              }
+              </style>
+
+execute:
+  echo: true
+  output: true
+editor: source
+---
+
+## Iniziamo
+
+- per la scrittura della tesi utilizzeremo Quarto book
+- possibilità di creare indice cliccabile
+- integrazione testo e codice e/o grafici
+- riproducibilità e semplicità di modifica delle analisi
+
+## Getting started (new folder)
+
+Creare la cartella con terminale:
+
+\
+
+```
+quarto create-project thesis --type book
+```
+
+\
+
+Per compilare il file aprire terminale in quella nuova cartella e scrivere:
+
+\
+
+```
+quarto render
+```
+
+
+## Getting started (_quarto.yml)
+
+Inserire nel file _quarto.yml
+
+```
+project:
+  type: book
+
+book:
+  title: "La mia bellissima tesi"
+  author: "Nome Bellissimo"
+  date: "4/3/2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  pdf:
+    documentclass: book
+    papersize: a4
+    fontsize: 12pt
+    margin-left: 1.5in   # Adjust margins for binding
+    margin-right: 1in
+    toc: true            # Table of Contents
+    number-sections: true
+    colorlinks: true    
+    fontfamily: times
+
+```
+
+## Esempio
+
+Link all'overleaf della mia tesi di laurea:
+
+[https://www.overleaf.com/read/kbbqkxyhhzsk#00cef6](https://www.overleaf.com/read/kbbqkxyhhzsk#00cef6)
+
+

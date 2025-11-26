@@ -1,0 +1,377 @@
+---
+title: "Introduzione a RMarkdown e Quarto"
+author: "Ambra Perugini"
+format:
+  revealjs:
+    css: custom.css
+    code-line-numbers: false
+    theme: default
+    logo: "figures/psicostatLogo.png"
+    slide-number: c/t
+    self-contained: true
+    code-fold: false
+    code-summary: "Show code"
+    code-overflow: wrap
+    include-in-header:
+      - text: |
+          <style>
+          #title-slide .title {
+            font-size: 3.2em;
+            color: #9B0014;
+          }
+          .slide-logo {
+            height: 60px !important;
+            max-height: none !important;
+            position: absolute !important;
+            bottom: 10px !important;
+            right: 10px !important;
+            top: unset !important;
+            left: unset !important;
+          }
+          </style>
+
+execute:
+  echo: true
+  output: true
+editor: source
+---
+
+# Github
+
+## Cos'è Github
+
+- GitHub è un **sito web** dove teniamo i file dei nostri progetti.
+- Permette di:
+  - Salvare le **diverse versioni** dei file
+  - Tornare indietro se qualcosa si rompe
+  - **Condividere** e collaborare
+  - Tenere sincronizzato il lavoro tra computer diversi
+
+> In questo corso useremo Github per gestire i file dei nostri progetti Quarto.
+
+## Cos'è Github Desktop
+
+- GitHub Desktop è un **programma** che collegheremo a GitHub.
+- Serve per:
+  - Scaricare i file dal repository online
+  - Salvare le modifiche e inviarle su GitHub
+  - Aggiornare il progetto quando il docente cambia qualcosa
+- Tutto questo **senza usare il terminale**.
+
+> È pensato proprio per chi non è informatico e vuole un'interfaccia grafica semplice.
+
+## Clonare la repository del corso
+
+Per avere i file del corso sul proprio computer:
+
+1. Andare su **Github** nel browser
+2. Aprire la **repository del corso**
+3. Cliccare sul pulsante **`Code`**
+4. Selezionare **“Open with Github Desktop”**
+5. Si aprirà Github Desktop
+6. Scegliere la cartella sul computer dove salvare il progetto
+7. Cliccare **`Clone`**
+
+> Ora avete una copia locale della repository e potete aprire i file .qmd con Quarto.
+
+## Il workflow principale (sempre lo stesso)
+
+Ogni volta che modificate i file del progetto:
+
+1. Aprite i file (es. `.qmd`) e **fate le vostre modifiche**
+2. Salvate i file
+3. Tornate su **Github Desktop**
+4. Nella sezione **Changes** vedrete l’elenco dei file modificati
+5. In basso, scrivete un breve messaggio di **Commit**  
+   - Esempio: `Aggiunta sezione risultati`
+6. Cliccate il pulsante **`Commit to main`** (o nome del branch)
+7. Poi cliccate **`Push origin`**
+
+> Così le vostre modifiche vengono inviate e salvate su Github.
+
+## Ricevere aggiornamenti dal docente
+
+Se aggiorno i materiali del corso:
+
+1. Aprite **Github Desktop**
+2. Selezionate la repository del corso
+3. Cliccate **`Fetch origin`**
+4. Se ci sono novità, cliccate **`Pull origin`** per scaricarle
+
+> In questo modo la vostra cartella locale rimane **allineata** alla versione online.
+
+## Capire lo stato del progetto
+
+In Github Desktop potete vedere a colpo d’occhio:
+
+- Se ci sono **file modificati** (sezione *Changes*)
+- Se ci sono commit da inviare su Github
+- Se siete allineati con la versione online (dopo *Fetch / Pull*)
+
+Vantaggi rispetto al terminale:
+
+- Non servono comandi da ricordare
+- Tutto è visibile con un’interfaccia grafica
+- È più difficile “rompere” qualcosa per errore
+
+## Creare la propria repository (progetto) {.smaller}
+
+Oltre a clonare la repository del corso, potete anche creare un vostro progetto su Github.
+
+**Come crearla:**
+
+1. Andare su **Github** (sito web)
+2. Cliccare su **New repository**
+3. Scegliere:
+   - **Nome del progetto** (es. `progetto-psicologia`)
+   - Una breve descrizione (opzionale)
+4. Scegliere la **visibilità**:
+   - **Public** → chiunque può vedere il progetto  
+   - **Private** → lo vedete solo voi (o persone che invitate)
+5. Cliccare **Create repository**
+
+**Poi:**
+- Potete aprire la repository in **Github Desktop**
+- Oppure creare i file direttamente sul computer e poi collegarla
+
+> Per progetti personali o autonomi è consigliato iniziare con una repository *privata*.
+
+# RMarkdown e Quarto
+
+## Perché usare un linguaggio di markup?
+
+- Riproducibilità: permette di documentare e replicare analisi scientifiche
+
+- Automazione: genera report, articoli e presentazioni senza copiare e incollare
+
+- Flessibilità: esportazione in HTML, PDF, Word, e altro
+
+- Collaborazione: facilita il lavoro di gruppo e la condivisione dei risultati
+
+![](figures/collab.png){fig-align="center"}
+
+## Cos'è un linguaggio di markup?
+
+- Un sistema per strutturare e formattare testo con comandi testuali
+
+- Diverso da un word processor: il contenuto e la formattazione sono separati
+
+- Markdown è un esempio di linguaggio di markup semplice e leggibile
+
+![](figures/meq.png){fig-align="center"}
+
+## Come funziona?
+
+1. Scrivi il codice: un file di testo con sezioni in Markdown e blocchi di codice R
+
+2. Esegui il codice: genera risultati direttamente nel documento
+
+3. Compila il documento: scegli il formato di output (HTML, PDF, Word, presentazioni...)
+
+![](figures/outputs.png){fig-align="center"}
+
+---
+
+## Quarto vs RMarkdown: differenze principali {.smaller}
+
+| Caratteristica | **Quarto** | **RMarkdown** |
+|----------------|------------|----------------|
+| **Dipendenza dal linguaggio** | Indipendente; funziona con R, Python, Julia, ObservableJS | Legato principalmente a **R** e al sistema **knitr** |
+| **Estensione dei file** | `.qmd` | `.Rmd` |
+| **Motore di rendering** | Motore unificato Quarto (basato su Pandoc) | `rmarkdown` + `knitr` + Pandoc |
+| **Supporto multi-linguaggio** | Nativo e fluido (più linguaggi nello stesso documento) | Principalmente R, supporto Python più limitato |
+| **Progetti e siti web** | Supporto integrato per progetti, siti, libri, blog | Richiede pacchetti diversi (bookdown, blogdown, xaringan…) |
+
+## Quarto vs RMarkdown: differenze principali {.smaller}
+
+| Caratteristica | **Quarto** | **RMarkdown** |
+|----------------|------------|----------------|
+| **Cross-reference e citazioni** | Integrate e semplici da usare | Spesso richiedono configurazioni o pacchetti aggiuntivi |
+| **Formati di output** | Sistema unificato (documenti, presentazioni, siti, libri) | Diversi pacchetti per diversi formati |
+| **Stile di configurazione** | YAML più chiaro e coerente | YAML più frammentato a seconda del formato |
+| **Prospettiva futura** | Moderno, attivamente sviluppato, consigliato per nuovi progetti | Mantenuto per compatibilità, evoluzione più lenta |
+
+### In sintesi  
+**Quarto è l’evoluzione moderna e unificata di RMarkdown**, più potente, più flessibile e non legata solo al linguaggio R.
+
+
+
+## Cosa faremo durante il corso?
+
+- Report dinamici con dati aggiornabili automaticamente
+
+- Presentazioni interattive con Reveal.js
+
+- Impostazione di un file per scrivere tesi e articoli in formato accademico (PDF, Word)
+
+- Esercitazione con presentazione finale
+
+![](figures/scale.jpeg){fig-align="center"}
+
+## {}
+
+![](figures/letsgo.jpeg)
+
+## Impostazione di un progetto in RStudio
+
+1. Apri **RStudio** e vai su `File -> New Project`
+
+2. Scegli **New Directory** e poi `Quarto Project``
+
+3. Seleziona la cartella di destinazione e dai un nome al progetto
+
+4. Clicca su **Create Project**
+
+![](figures/repo.png){fig-align="center"}
+
+# Struttura di un file Quarto (.qmd) 
+
+# 1. YAML
+
+## YAML: opzioni principali
+
+La testata **YAML** permette di definire:
+
+::: {style="font-size: .8em;"}
+
+- `title`: titolo del documento  
+- `subtitle`: sottotitolo  
+- `author`: autore/i  
+- `date`: data  
+- `output`: formato di output  
+- `theme`: tema grafico  
+- `fontcolor`: colore del testo  
+- `fig-width`: larghezza predefinita delle figure  
+- `code-fold`: piegatura del codice (`true/false`)  
+- `toc`: indice dei contenuti (`true/false`)  
+- `number-sections`: numerazione sezioni  
+
+:::
+
+## YAML: tipi di output
+
+- `html_document`
+- `pdf_document`
+- `word_document`
+- `revealjs`
+- `pptx`
+- `beamer`
+
+È possibile specificare più output in un solo yaml così che il documento venga renderizzato contemporaneamente in più formati.
+
+# 2. Corpo del documento 
+
+## Corpo del documento: Titoli e sottotitoli
+
+\
+
+\# Titolo principale
+
+\#\# Sottotitolo di primo livello
+
+\#\#\# Sottotitolo di secondo livello
+
+\#\#\#\# Sottotitolo di terzo livello
+
+
+## Corpo del documento: Paragrafi e formattazione del testo
+
+\
+
+Questo è un \*\*paragrafo di esempio\*\* con testo in grassetto.
+
+Si può anche usare \*corsivo\* o \`testo con font monospaziato\`.
+
+\
+
+Questo è un **paragrafo di esempio** con testo in grassetto.
+
+Si può anche usare *corsivo* o `testo con font monospaziato`.
+
+
+## Corpo del documento: Liste puntate e numerate
+
+\
+
+\- Elemento 1
+
+\- Elemento 2
+
+\- Elemento 3
+  
+\- Elemento 4
+
+\
+
+- Elemento 1
+
+- Elemento 2
+
+- Elemento 3
+  
+- Elemento 4
+
+## 3. Blocchi di codice
+
+Si usano per inserire codice ed eseguire analisi:
+
+- warning: se false, non fa vedere i warning del modello e/o funzione
+- include: nel repoprt o documento si vede oppure no l'ouput
+- eval: se true gira il codice, se false non gira proprio
+- echo: false -> non si vede il codice, se echo -> true si vede il codice che avete utilizzato
+
+## 3. Blocchi di codice
+
+\`\`\`r
+
+#| warning: false
+
+#| include: false
+
+#| eval: false
+
+#| echo: false
+
+summary(cars)
+
+\`\`\`
+
+Per settare opzioni dei chunk in **Quarto**, in stile YAML, utilizzare #| all'inizio di riga dentro il chunk. 
+
+## Inserire formule
+
+- Equazioni in una nuova riga: `$$…$$`
+- Equazione inline `$…$`
+
+:::{style="text-align: center;"}
+
+`$$ Y = \beta_{0} + \beta_{1} X $$`
+
+:::
+
+$$ Y = \beta_{0} + \beta_{1} X$$
+
+![](figures/math.jpeg){fig-align="center"}
+
+## Esecuzione e rendering
+1. Per inserire i chunk `Ctrl + Alt + I` (Windows) `Cmd + Option + I` (Mac)
+2. Per eseguire i blocchi di codice, usa `Ctrl + Invio` (Windows) o `Cmd + Invio` (Mac)
+3. Per generare il documento finale, clicca su `Render` (Quarto) o `Knit` (R Markdown)
+
+![](figures/vanellope.webp){fig-align="center"}
+
+## Applicazioni pratiche
+- **Report dinamici** con dati aggiornabili automaticamente
+- **Presentazioni scientifiche** interattive con Reveal.js
+- **Scrittura di tesi e articoli** in formato accademico (PDF, Word, LaTeX)
+- **Dashboard e documentazione interattiva** per la ricerca
+
+![](figures/FelixAggiustatutto.webp){fig-align="center"}
+
+## Conclusione
+- R Markdown e Quarto semplificano la comunicazione scientifica
+- Strumenti potenti per creare documenti chiari, riproducibili e ben formattati
+- Indispensabili per una ricerca trasparente e collaborativa
+
+![](figures/Kirby2.png){.absolute bottom=20 right=320 width="450" height="420"}
+

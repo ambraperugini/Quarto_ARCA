@@ -1,0 +1,89 @@
+---
+title: "RMarkdown. Analisi riproducibili, presentazioni, report"
+subtitle: "Corso ARCA"
+author: "Ambra Perugini"
+include-in-header: assets/header.html
+format: 
+  html:
+    self-contained: true
+    toc: true   
+    toc-depth: 3 
+    toc-expand: 3 
+    code-fold: false 
+    message: false
+    css: "assets/custom.css"
+editor: source
+---
+
+
+## Orario Lezioni e Aula
+
+| Date       | Orario        | Aula   |
+|------------|---------------|--------|
+| 24/11/2025 | 9:00 - 13:00  | ARCA   |
+| 25/11/2025 | 9:00 - 13:00  | ARCA   |
+| 26/11/2025 | 9:00 - 13:00  | ARCA   |
+| 27/11/2025 | 8:30 - 12:30  | ARCA   |
+| 28/11/2025 | 9:00 - 13:00  | ARCA   |
+
+### Prima di iniziare il corso
+
+Fondamentale:
+
+1.  Aver installato R e RStudio [pagina per il download](https://posit.co/download/rstudio-desktop/){target="_blank"}
+2. Aver creato un account github; non serve l'account per accedere ai materiali ma serve per tenere le vostre versioni dei materiali remote aggiornate in comodità. E' anche dove caricherete le vostre creazioni ;) 
+3. ~~Scaricare Github Desktop [da qui](https://desktop.github.com/download/)~~
+3. Installa git [da qui](https://git-scm.com/install/)
+
+Comandi base di git:
+
+- git clone HTTPS (per scaricare sul computer una repository da github)
+
+- git status (per controllare se il locale è up to date)
+
+- git add . (aggiunge tutti i nuovi cambiamenti)
+
+- git commit -m"il_mio_commento" (inserire commento)
+
+- git push (manda tutto in orbita)
+
+- git pull (scaricare cose da github se la vostra cartella locale non è aggiornata)
+
+
+### Slides:
+
+-   [01 - Introduction](Slides/01_Introduzione.html)
+
+-   [02 - Reports in HTML](Slides/02_Reports_HTML.html)
+
+-   [03 - Presentazioni](Slides/03_Presentazioni.html)
+
+-   [04 - PDF](Slides/04_PDF.html)
+
+### Link utili
+
+-   R Markdown [**sito**](https://rmarkdown.rstudio.com){target="_blank"}
+
+-   Quarto [**sito**](https://quarto.org/docs/get-started/hello/rstudio.html){target="_blank"}
+
+Document types:
+
+-   HTML in Quarto [**sito**](https://quarto.org/docs/output-formats/html-basics.html){target="_blank"}
+
+-   PDF in Quarto [**sito**](https://quarto.org/docs/output-formats/pdf-basics.html){target="_blank"}
+
+-   Word in Quarto [**sito**](https://quarto.org/docs/output-formats/ms-word.html){target="_blank"}
+
+Presentazioni ([overview](https://quarto.org/docs/presentations/){target="_blank"}):
+
+-   Revealjs in Quarto [**sito**](https://quarto.org/docs/presentations/revealjs/){target="_blank"}
+
+-   Powerpoint in Quarto[**sito**](https://quarto.org/docs/presentations/powerpoint.html){target="_blank"}
+
+-   PDF in Quarto[**sito**](https://quarto.org/docs/presentations/beamer.html){target="_blank"}
+
+------------------------------------------------------------------------
+
+::: {style="font-size:11px;"}
+GitHub repository associated to the present course website: [https://github.com/ambraperugini/Quarto_ARCA](https://github.com/ambraperugini/Quarto_ARCA){target="_blank"}
+:::

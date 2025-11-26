@@ -1,0 +1,89 @@
+---
+title: "Il mio primo HTML"
+subtitle: "Speriamo che funzioni"
+author: "Ambra Perugini"
+format: html
+page-layout: full
+bibliography: "bib2.bib"
+bibliographystyle: apa
+csl: "apa.csl"
+documentclass: "apa7"
+execute: 
+  cache: true
+  warning: false
+embed-resources: true
+self-contained: true
+self-contained-math: true
+code-fold: true
+---
+
+```{css, echo=FALSE}
+.title {
+  font-size: 100px;
+  color: purple !important;
+}
+```
+
+
+```{r}
+#| results: hide
+
+rm(list=ls())
+
+library(readxl)
+DATA <- read_xls("Sara_dataset.xls", col_names = TRUE)
+
+DATA
+
+```
+
+```{r}
+#| results: markup
+
+table(DATA$gender)
+```
+
+
+## Colonne
+
+::: columns
+::: {.column width="50%"}
+Quarto:
+
+-   Bellissimo
+
+-   Ha anche revealjs
+
+<!-- -   Punto 3 -->
+:::
+
+::: {.column width="50%"} 
+
+Markdown:
+
+-   Fantastico
+
+-   Niente revealjs :(
+
+<!-- -   Punto 3 -->
+:::
+:::
+
+L'articolo di Cohen sulla terra piatta è @laterraepiatta
+
+## [Color-hex](https://www.color-hex.com/color-palette/1057481)
+
+## Sezione 2
+
+**Testo:**
+
+1.  
+
+## Analisi
+
+
+
+
+
+
+
