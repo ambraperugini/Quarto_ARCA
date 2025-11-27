@@ -13,8 +13,8 @@ format:
     incremental: false
     self-contained: true
     embed-resources: true
-    code-fold: false
-    code-summary: "Show code"
+    code-fold: true
+    code-summary: "Codice"
     code-overflow: wrap
     toc: true 
     bibliography: bibliography.bib
@@ -100,7 +100,7 @@ Si va così: `^[Una nota numerata che finisce in fondo]` si mette dove va il num
 -   {.unlisted} dopo il titolo per non inserire nel toc una slide
 :::
 
-## {}
+## {.unlisted}
 
 -   footer (nota a pie di pagina in tutte le slide se nello YAML, o nelle singole slides)
 -   e molto ancora
@@ -139,7 +139,7 @@ Speaker notes go here.
 :::
 ```
 
-## {}
+## {.unlisted}
 
 ::: {style="text-align: center;"}
 io sono centrato
@@ -171,7 +171,7 @@ io sono più grande e rosa
 :::
 ```
 
-## Themes {.smaller}
+## Themes {.smaller transition="convex"}
 
 Da inserire nello YAML:
 
@@ -225,7 +225,7 @@ plot(x,z)
 `code-line-numbers="|7|9"` per avere prima tutto, poi 7 e poi 9
 
 
-## Evidenziare righe di codice
+## Evidenziare righe di codice {.unlisted}
 :::{.fragment .fade-in-then-out}
 ![](figures/high.png)
 :::
@@ -299,7 +299,7 @@ plot(x,z)
 
 {auto-animate="true"} dopo il titolo
 
-## Autoanimazione 2 {auto-animate="true"}
+## Autoanimazione 2 {.unlisted auto-animate="true"}
 
 Questo testo è qui ma si sposterà
 

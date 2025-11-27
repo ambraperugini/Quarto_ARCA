@@ -41,33 +41,27 @@ editor: source
 - possibilità di creare indice cliccabile
 - integrazione testo e codice e/o grafici
 - riproducibilità e semplicità di modifica delle analisi
+- possibilità di cross-reference di capitoli, immagini, equazioni ecc.
+
+## Tipi di output
+
+- HTML
+- PDF
+- MS Word
+- EPUB
+- AsciiDoc
 
 ## Getting started (new folder)
 
-Creare la cartella con terminale:
+::: {style="font-size: 0.6em;"}
 
-\
+1. Creare un progetto quarto book da dentro RStudio.
 
-```
-quarto create-project thesis --type book
-```
+2. Inserire nel file _quarto.yml:
 
-\
+:::
 
-Per compilare il file aprire terminale in quella nuova cartella e scrivere:
-
-\
-
-```
-quarto render
-```
-
-
-## Getting started (_quarto.yml)
-
-Inserire nel file _quarto.yml
-
-```
+``` yaml
 project:
   type: book
 
@@ -95,12 +89,132 @@ format:
     colorlinks: true    
     fontfamily: times
 
+
+execute:
+  cache: true # Se avete modelli pesanti da girare
+
 ```
 
-## Esempio
+## Creare cartelle ordinate 
 
-Link all'overleaf della mia tesi di laurea:
+::: {style="font-size: 0.8em;"}
 
-[https://www.overleaf.com/read/kbbqkxyhhzsk#00cef6](https://www.overleaf.com/read/kbbqkxyhhzsk#00cef6)
+Per ogni capitolo si può fare una cartella dentro la cartella del progetto richiamando nel file _quarto.yml la directory giusta e si può aggiungere anche l'appendice o aggiungere footer ad ogni pagina:
+
+:::
+
+``` yaml
+project:
+  type: book
+
+book:
+  title: "La mia bellissima tesi"
+  author: "Nome Bellissimo"
+  date: `r Sys.Date()`"
+  page-footer: "Copyright 2025, Tesista Dell'Anno"
+    border: false
+  chapters:
+    - index.qmd
+    - intro/intro.qmd
+    - summary/summary.qmd
+    - references.qmd
+  appendices:
+    - tools.qmd
+    - resources.qmd
+    
+```
+
+## Reference section
+
+\
+
+Quarto book creates authomatically the file references.qmd con dentro:
+
+\
+
+``` {.bash filename="References"}
+# References {.unnumbered}
+
+::: {#refs}
+:::
+```
+
+
+
+\
+
+Ma lo potete mettere dove volete se preferite.
+
+## Cross-ref {.scrollable}
+
+Per capitoli e sezioni:
+
+```{.bash}
+# Introduction {#sec-introduction}
+
+Vedi @sec-introduction per maggiori informazioni.
+
+```
+
+Per immagini:
+
+```{.bash}
+
+![](fig.png){#fig-bho}
+
+Come visto in @fig-bho
+
+```
+
+O tabelle:
+
+```{.bash}
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: descrizione tabella {#tbl-lettere}
+
+Vedi @tbl-lettere.
+```
+
+Oppure:
+
+```{.bash}
+::: {#tbl-lettere}
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+Descrizione tabella
+
+Vedi @tbl-lettere.
+::: 
+```
+
+Oppure per tabelle create nei chunk:
+
+```{.bash}
+#| label: tbl-iris
+#| tbl-cap: "Iris Data"
+
+library(knitr)
+kable(head(iris))
+```
+
+
+## Per concludere
+
+Iniziate ad impostare il vostro progetto di tesi e alla fine se avete tempo provate qualche cross-reference.
+
+![](figures/happydog.gif){fig-align="center"}
+
+
+
 
 
