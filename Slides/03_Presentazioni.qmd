@@ -46,6 +46,15 @@ editor: source
 
 ## Iniziamo
 
+```{r}
+#| echo: false
+
+rm(list=ls())
+
+
+```
+
+
 -   per la presentazione utilizzeremo revealjs in Quarto
 -   massima flessibilità
 -   slides dinamiche
