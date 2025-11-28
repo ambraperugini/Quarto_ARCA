@@ -193,8 +193,10 @@ Oppure:
 
 Descrizione tabella
 
+:::
+
 Vedi @tbl-lettere.
-::: 
+
 ```
 
 Oppure per tabelle create nei chunk:
@@ -213,8 +215,4 @@ kable(head(iris))
 Iniziate ad impostare il vostro progetto di tesi e alla fine se avete tempo provate qualche cross-reference.
 
 ![](figures/happydog.gif){fig-align="center"}
-
-
-
-
 

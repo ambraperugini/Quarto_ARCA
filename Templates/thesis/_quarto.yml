@@ -12,6 +12,7 @@ book:
     - references.qmd
 
 bibliography: references.bib
+bibliographystyle: apa
 
 format:
   pdf:
@@ -28,5 +29,3 @@ format:
     number-sections: true
     colorlinks: true    
     fontfamily: times
-
-
