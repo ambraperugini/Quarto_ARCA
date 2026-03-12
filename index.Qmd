@@ -20,11 +20,11 @@ editor: source
 
 | Date       | Orario        | Aula   |
 |------------|---------------|--------|
-| 24/11/2025 | 9:00 - 13:00  | ARCA   |
-| 25/11/2025 | 9:00 - 13:00  | ARCA   |
-| 26/11/2025 | 9:00 - 13:00  | ARCA   |
-| 27/11/2025 | 8:30 - 12:30  | ARCA   |
-| 28/11/2025 | 9:00 - 13:00  | ARCA   |
+| 16/03/2026 | 9:00 - 13:00  | ARCA   |
+| 17/03/2026 | 9:00 - 13:00  | ARCA   |
+| 18/03/2026 | 9:00 - 13:00  | ARCA   |
+| 19/03/2026 | 9:00 - 13:00  | ARCA   |
+| 20/03/2026 | 9:00 - 13:00  | ARCA   |
 
 ### Prima di iniziare il corso
 
@@ -32,7 +32,6 @@ Fondamentale:
 
 1.  Aver installato R e RStudio [pagina per il download](https://posit.co/download/rstudio-desktop/){target="_blank"}
 2. Aver creato un account github; non serve l'account per accedere ai materiali ma serve per tenere le vostre versioni dei materiali remote aggiornate in comodità. E' anche dove caricherete le vostre creazioni ;) 
-3. ~~Scaricare Github Desktop [da qui](https://desktop.github.com/download/)~~
 3. Installa git [da qui](https://git-scm.com/install/)
 
 Comandi base di git:
