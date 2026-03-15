@@ -448,14 +448,16 @@ Ambra Perugini
 }
 </style>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Report analisi"</span></span>
 <span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Nome Cognome"</span></span>
-<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2025-11-28"</span></span>
+<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"`r Sys.Date()`"</span></span>
 <span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> bibliography.bib</span></span>
 <span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
 <span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="cb1-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 <img data-src="figures/html.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="parametri-yaml" class="slide level2 smaller">
@@ -476,7 +478,8 @@ Ambra Perugini
 </ul>
 </div><div class="column" style="width:50%;">
 <p>es:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"my html"</span></span>
 <span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">html</span><span class="kw">:</span></span>
@@ -490,6 +493,7 @@ Ambra Perugini
 <span id="cb2-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">results</span><span class="kw">:</span><span class="at"> hide</span></span>
 <span id="cb2-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb2-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div></div>
 </section>
 <section id="chunks" class="slide level2">
@@ -560,13 +564,15 @@ Ambra Perugini
 <section id="valori-nel-testo-presi-da-oggetti-r" class="slide level2">
 <h2>Valori nel testo presi da oggetti r</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a>DATA <span class="ot">&lt;-</span> <span class="fu">read_xls</span>(<span class="at">path =</span> <span class="st">"data/Sara_dataset.xls"</span>)</span>
-<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a>cor_pre <span class="ot">&lt;-</span> <span class="fu">cor</span>(DATA<span class="sc">$</span>anx_pre, DATA<span class="sc">$</span>mathquiz, <span class="at">use =</span> <span class="st">"complete.obs"</span>)</span>
-<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">library(readxl)</span></span>
+<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">DATA &lt;- read_xls(path = "data/Sara_dataset.xls")</span></span>
+<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">cor_pre &lt;- cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")</span></span>
 <span id="cb7-6"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="" aria-hidden="true" tabindex="-1"></a>cor_pre</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">cor_pre</span></span>
+<span id="cb7-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.05491077</code></pre>
 </div>
@@ -579,7 +585,7 @@ Ambra Perugini
 <ul>
 <li>-0.0549108</li>
 </ul>
-<pre><code>- -0.0549108</code></pre>
+<pre><code>- `\r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`</code></pre>
 </section>
 <section id="pannelli-visual" class="slide level2">
 <h2>Pannelli (visual)</h2>

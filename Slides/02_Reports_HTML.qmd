@@ -55,7 +55,8 @@ rm(list=ls())
 ```
 
 
-```yaml
+```{yaml}
+#| echo: true
 ---
 title: "Report analisi"
 author: "Nome Cognome"
@@ -99,7 +100,8 @@ embed-resources: true
 
 es:
 
-```yaml
+```{yaml}
+#| echo: true
 ---
 title: "my html"
   format:
@@ -245,7 +247,7 @@ Importante inserire nello YAML la voce `bibliography: "nome del file"`
 ## Valori nel testo presi da oggetti r
 
 ```{r}
-#| echo = TRUE
+#| echo: fenced
 
 library(readxl)
 DATA <- read_xls(path = "data/Sara_dataset.xls")
@@ -267,7 +269,7 @@ Elenco delle correlazioni:
 - `r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`
 
 ````
-- `r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`
+- `\r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`
 ````
 
 ## Pannelli (visual)

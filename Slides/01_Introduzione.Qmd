@@ -36,105 +36,6 @@ execute:
 editor: source
 ---
 
-# Github
-
-## Cos'è Github
-
-- GitHub è un **sito web** dove teniamo i file dei nostri progetti.
-- Permette di:
-  - Salvare le **diverse versioni** dei file
-  - Tornare indietro se qualcosa si rompe
-  - **Condividere** e collaborare
-  - Tenere sincronizzato il lavoro tra computer diversi
-
-> In questo corso useremo Github per gestire i file dei nostri progetti Quarto.
-
-## Cos'è Github Desktop
-
-- GitHub Desktop è un **programma** che collegheremo a GitHub.
-- Serve per:
-  - Scaricare i file dal repository online
-  - Salvare le modifiche e inviarle su GitHub
-  - Aggiornare il progetto quando il docente cambia qualcosa
-- Tutto questo **senza usare il terminale**.
-
-> È pensato proprio per chi non è informatico e vuole un'interfaccia grafica semplice.
-
-## Clonare la repository del corso
-
-Per avere i file del corso sul proprio computer:
-
-1. Andare su **Github** nel browser
-2. Aprire la **repository del corso**
-3. Cliccare sul pulsante **`Code`**
-4. Selezionare **“Open with Github Desktop”**
-5. Si aprirà Github Desktop
-6. Scegliere la cartella sul computer dove salvare il progetto
-7. Cliccare **`Clone`**
-
-> Ora avete una copia locale della repository e potete aprire i file .qmd con Quarto.
-
-## Il workflow principale (sempre lo stesso)
-
-Ogni volta che modificate i file del progetto:
-
-1. Aprite i file (es. `.qmd`) e **fate le vostre modifiche**
-2. Salvate i file
-3. Tornate su **Github Desktop**
-4. Nella sezione **Changes** vedrete l’elenco dei file modificati
-5. In basso, scrivete un breve messaggio di **Commit**  
-   - Esempio: `Aggiunta sezione risultati`
-6. Cliccate il pulsante **`Commit to main`** (o nome del branch)
-7. Poi cliccate **`Push origin`**
-
-> Così le vostre modifiche vengono inviate e salvate su Github.
-
-## Ricevere aggiornamenti dal docente
-
-Se aggiorno i materiali del corso:
-
-1. Aprite **Github Desktop**
-2. Selezionate la repository del corso
-3. Cliccate **`Fetch origin`**
-4. Se ci sono novità, cliccate **`Pull origin`** per scaricarle
-
-> In questo modo la vostra cartella locale rimane **allineata** alla versione online.
-
-## Capire lo stato del progetto
-
-In Github Desktop potete vedere a colpo d’occhio:
-
-- Se ci sono **file modificati** (sezione *Changes*)
-- Se ci sono commit da inviare su Github
-- Se siete allineati con la versione online (dopo *Fetch / Pull*)
-
-Vantaggi rispetto al terminale:
-
-- Non servono comandi da ricordare
-- Tutto è visibile con un’interfaccia grafica
-- È più difficile “rompere” qualcosa per errore
-
-## Creare la propria repository (progetto) {.smaller}
-
-Oltre a clonare la repository del corso, potete anche creare un vostro progetto su Github.
-
-**Come crearla:**
-
-1. Andare su **Github** (sito web)
-2. Cliccare su **New repository**
-3. Scegliere:
-   - **Nome del progetto** (es. `progetto-psicologia`)
-   - Una breve descrizione (opzionale)
-4. Scegliere la **visibilità**:
-   - **Public** → chiunque può vedere il progetto  
-   - **Private** → lo vedete solo voi (o persone che invitate)
-5. Cliccare **Create repository**
-
-**Poi:**
-- Potete aprire la repository in **Github Desktop**
-- Oppure creare i file direttamente sul computer e poi collegarla
-
-> Per progetti personali o autonomi è consigliato iniziare con una repository *privata*.
 
 # RMarkdown e Quarto
 
@@ -210,7 +111,113 @@ Oltre a clonare la repository del corso, potete anche creare un vostro progetto 
 
 ## {}
 
+
 ![](figures/letsgo.jpeg)
+
+# Github
+
+## Cos'è Github
+
+- GitHub è un **sito web** dove teniamo i file dei nostri progetti.
+- Permette di:
+  - Salvare le **diverse versioni** dei file
+  - Tornare indietro se qualcosa si rompe
+  - **Condividere** e collaborare
+  - Tenere sincronizzato il lavoro tra computer diversi
+
+> In questo corso useremo Github per gestire i file dei nostri progetti Quarto.
+
+## Cos'è Git
+
+- **Git** è un **programma** che permette di gestire le versioni dei file.
+- Lo useremo dal **terminale** per collegare il nostro computer a GitHub.
+
+Serve per:
+
+- Scaricare i file dal repository online
+- Salvare le modifiche ai file
+- Inviare le modifiche su GitHub
+- Aggiornare il progetto quando il docente cambia qualcosa
+
+> Git è lo strumento che lavora dietro GitHub.
+
+## Clonare la repository del corso
+
+Per avere i file del corso sul proprio computer:
+
+1. Andare su **Github** nel browser
+2. Aprire la **repository del corso**
+3. Cliccare sul pulsante **`Code`**
+4. Copiare l'indirizzo della repository (URL)
+
+Poi aprire il **terminale** e scrivere:
+
+```bash
+git clone URL-della-repository
+```
+
+> Questo comando crea una copia della repository sul vostro computer.
+
+
+## Il workflow principale (sempre lo stesso) {.smaller}
+
+1. Aprite il terminale nella cartella e controllate lo stato:
+
+```bash
+git status
+```
+
+2. Se siete sincronizzati con l'ultima versione su github iniziate con le vostre modifiche. Altrimenti prima di iniziare procedete con il seguente comando per scaricare l'ultima versione:
+
+```bash
+git pull
+```
+
+3. Quando avete finito di modificare la repository aggiungete i nuovi file:
+
+```bash
+git add .
+```
+
+4. Create un commit con un messaggio
+
+```bash
+git commit -m "Aggiunta sezione risultati"
+```
+
+5. Inviate le modifiche su github
+
+```bash
+git push
+```
+
+## Creare la propria repository: {.smaller}
+
+1. Andare su Github (sito web)
+
+2. Cliccare su New repository
+
+3. Scegliere:
+
+3.1. Nome del progetto (es. progetto-psicologia)
+ 
+3.2. Una breve descrizione (opzionale)
+ 
+4. Scegliere la visibilità:
+
+4.1 Public -> chiunque può vedere il progetto
+
+4.2 Private -> lo vedete solo voi (o persone che invitate)
+
+5. Cliccare Create repository
+
+**Poi:**
+
+Per collegare una cartella locale alla repository potete fare come avete fatto per scaricare quella del corso:
+
+```bash
+git clone URL-della-vostra-repository
+```
 
 ## Impostazione di un progetto in RStudio
 
