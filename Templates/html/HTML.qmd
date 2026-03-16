@@ -12,7 +12,6 @@ execute:
   cache: true
   warning: false
 embed-resources: true
-self-contained: true
 self-contained-math: true
 code-fold: true
 ---

@@ -44,7 +44,6 @@ editor: source
 rm(list=ls())
 ```
 
-
 ## Getting started (YAML)
 
 ```{css, echo=FALSE}
@@ -53,7 +52,6 @@ rm(list=ls())
   color: purple !important;
 }
 ```
-
 
 ```{yaml}
 #| echo: true
@@ -66,38 +64,35 @@ output: html_document
 embed-resources: true
 ---
 ```
+
 ![](figures/html.png){fig-align="center"}
 
 ## Parametri YAML {.smaller}
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
+-   toc: true (table of content)
 
-- toc: true (table of content)
+-   toc-title: Contents
 
-- toc-title: Contents
+-   toc-location: left
 
-- toc-location: left
+-   number-sections: true
 
-- number-sections: true
+-   embed-resources: true (per essere un html autonomo fuori dalla cartella)
 
-- embed-resources: true (per essere un html autonomo fuori dalla cartella)
+-   execute: e si possono specificare per tutti i chunk dei settings di default
 
-- execute: e si possono specificare per tutti i chunk dei settings di default
+-   cache: ture (salva gli output dei chunk in un file per compilare più velocemente)
 
-- cache: ture (salva gli output dei chunk in un file per compilare più velocemente)
+-   results: hide (nasconde l'output di un chunk, può essere settato anche a 'markup' per farli vedere in maniera ordinata)
 
-- results: hide (nasconde l'output di un chunk, può essere settato anche a 'markup' per farli vedere in maniera ordinata)
+-   echo: false (di default non fa vedere il codice dei chunk)
 
-- echo: false (di default non fa vedere il codice dei chunk)
-
-- code-fold: true (per far vedere il codice cliccando su code)
-
+-   code-fold: true (per far vedere il codice cliccando su code)
 :::
 
 ::: {.column width="50%"}
-
 es:
 
 ```{yaml}
@@ -117,63 +112,54 @@ execute:
   echo: false
 ---
 ```
-
 :::
-
-::::
+:::
 
 ## Chunks
 
 Esempi in chunk r
 
-\```{r}
+\`\`\`{r}
 
-\#| results: hide
+#\| results: hide
 
-\#| echo: false
+#\| echo: false
 
-\#| label: fig-nome_figura
+#\| label: fig-nome_figura
 
-\#| fig-width: 8
+#\| fig-width: 8
 
-\#| fig-height: 4
+#\| fig-height: 4
 
-\#| fig-cap: Caption della vostra figura. 
+#\| fig-cap: Caption della vostra figura.
 
-\```
-
+\`\`\`
 
 ## Colonne {.scrollable}
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
 Contenuto 1:
 
-- Punto 1
+-   Punto 1
 
-- Punto 2
+-   Punto 2
 
-- Punto 3
-
+-   Punto 3
 :::
 
 ::: {.column width="50%"}
-
 Contenuto 2:
 
-- Punto 1
+-   Punto 1
 
-- Punto 2
+-   Punto 2
 
-- Punto 3
-
+-   Punto 3
+:::
 :::
 
-::::
-
-```markdown
+``` markdown
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -191,14 +177,15 @@ Contenuto 2:
 
 ## Testo colorato e immagini
 
-Io <span style="color:#ff4da6;">amo</span> Quarto!
+Io [amo]{style="color:#ff4da6;"} Quarto!
 
-```markdown
+``` markdown
 Io <span style="color:red;">amo</span> Quarto!
 ```
+
 Avete visto varie immagini, ecco come le inserisco:
 
-```markdown
+``` markdown
 ![](figures/magic.png){fig-align="center"}
 ```
 
@@ -206,15 +193,12 @@ Avete visto varie immagini, ecco come le inserisco:
 
 ## Aggiungere citazioni (pt.1)
 
-
 Questo articolo mi piace molto ed è stato scritto da @scheel2021hypothesis, [@scheel2021hypothesis].
 
-
-```markdown
+``` markdown
 @scheel2021hypothesis per cit. nel testo
 [@scheel2021hypothesis] per cit. tra parentesi
 ```
-
 
 Le references vengono poi in automatico messe per esteso alla fine del fine. Per creare un file .bib, aprire un nuovo file di testo e salvarlo con l'estensione .bib. Importante inserire nello **YAML** la voce:
 
@@ -222,11 +206,7 @@ Le references vengono poi in automatico messe per esteso alla fine del fine. Per
 
 `csl: "apa.csl"`
 
-
-
 ## Aggiungere citazioni (pt.2)
-
-
 
 Il file csl (Citation Style Language) che trovate in cartella vi permette di formattare correttamente in stile apa le citazioni
 
@@ -260,17 +240,17 @@ cor_pre
 
 Elenco delle correlazioni:
 
-- correlazione tra Ansia pre e math quiz -> $r =$ `r cor_pre`
+-   correlazione tra Ansia pre e math quiz -\> $r =$ `r cor_pre`
 
-````
+```         
 - correlazione tra Ansia pre e math quiz -> $r =$ `\r cor_pre\`
-````
+```
 
-- `r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`
+-   `r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`
 
-````
+```         
 - `\r cor(DATA$anx_pre, DATA$mathquiz, use = "complete.obs")`
-````
+```
 
 ## Pannelli (visual)
 
@@ -336,11 +316,12 @@ critical_t2sp(m1 = m1, m2 = m2, sd1 = sd1, sd2 = sd2, n = n)
 
 ## Pannelli (source) {.scrollable}
 
-```markdown
+``` markdown
 ::: panel-tabset
 ### From data (code)
 ```
-```r
+
+``` r
 #| echo: true
 #| results: hide
 
@@ -352,10 +333,12 @@ Holz <- holzinger.swineford
 tt <- t.test(Holz$t01_visperc [ Holz$female == 1], Holz$t01_visperc [ Holz$female == 2])
 critical(tt)
 ```
-```markdown
+
+``` markdown
 ### From data (output)
 ```
-```r
+
+``` r
 #| echo: false
 #| results: markup
 
@@ -367,11 +350,12 @@ Holz <- holzinger.swineford
 tt <- t.test(Holz$t01_visperc [ Holz$female == 1], Holz$t01_visperc [ Holz$female == 2])
 critical(tt)
 ```
-```markdown
+
+``` markdown
 ### From sample size (code)
 ```
 
-```r
+``` r
 #| echo: true
 #| results: hide
 
@@ -383,11 +367,11 @@ n <- 30
 critical_t2sp(m1 = m1, m2 = m2, sd1 = sd1, sd2 = sd2, n = n)
 ```
 
-```markdown
+``` markdown
 ### From sample size (output)
 ```
 
-```r
+``` r
 #| echo: false
 #| results: markup
 
@@ -398,55 +382,55 @@ sd2 <- 4.25
 n <- 30
 critical_t2sp(m1 = m1, m2 = m2, sd1 = sd1, sd2 = sd2, n = n)
 ```
-```markdown
+
+``` markdown
 :::
 ```
 
 ## Esercizio {.smaller}
 
-- Scaricate il dataset "Sara_dataset.xlsx"
-- Descrivete le variabili con statistiche descrittive
-- Analizzate come meglio credete 2 delle variabili
-- inserire una sezione con due colonne
-- inserire una parola di colore diverso
-- inserire un'immagine
-- inserire delle citazioni tramite il file .bib
-- scrivete un piccolo paragrafo di conclusione in cui riassumete il lavoro fatto
+-   Scaricate il dataset "Sara_dataset.xlsx"
+-   Descrivete le variabili con statistiche descrittive
+-   Analizzate come meglio credete 2 delle variabili
+-   inserire una sezione con due colonne
+-   inserire una parola di colore diverso
+-   inserire un'immagine
+-   inserire delle citazioni tramite il file .bib
+-   scrivete un piccolo paragrafo di conclusione in cui riassumete il lavoro fatto
 
 Extra:
 
-- richiamare nel testo oggetti dell'environment di r
-- creare un immagine con i dati
-- aggiungere fig-cap
-- aggiungere lable
-- opzionale: sistemare dimensione immagine nel chunk
+-   richiamare nel testo oggetti dell'environment di r
+-   creare un immagine con i dati
+-   aggiungere fig-cap
+-   aggiungere lable
+-   opzionale: sistemare dimensione immagine nel chunk
 
 ## Sara_dataset Variabili {.smaller}
 
-- genere dei soggetti (gender: 1 = femmine, 2 = maschi)
-- tipo di laurea triennale conseguita (major: 1 = psicologia, 2 = medicina, 3 = biologia, 4 = sociologia, 5 = economia)
-- condizione sperimentale (cond: 1 = facile, ..., 4 = impossibile)
-- autovalutazione del timore verso la matematica (phobia) su scala 0-10
-- numero corsi di matematica frequentati (prevmath)
-- punteggio ad un pre-test di matematica (mathquiz)
-- punteggio ad un test di statistica (statquiz)
-- auto-misurazione del battito cardiaco in condizioni normali (hr base), prima del test (hr pre) e dopo il test (hr post)
-- punteggi ad un test sull’ansia in condizioni normali (anx base), prima del test (anx pre) e dopo il test (anx post)
-
+-   genere dei soggetti (gender: 1 = femmine, 2 = maschi)
+-   tipo di laurea triennale conseguita (major: 1 = psicologia, 2 = medicina, 3 = biologia, 4 = sociologia, 5 = economia)
+-   condizione sperimentale (cond: 1 = facile, ..., 4 = impossibile)
+-   autovalutazione del timore verso la matematica (phobia) su scala 0-10
+-   numero corsi di matematica frequentati (prevmath)
+-   punteggio ad un pre-test di matematica (mathquiz)
+-   punteggio ad un test di statistica (statquiz)
+-   auto-misurazione del battito cardiaco in condizioni normali (hr base), prima del test (hr pre) e dopo il test (hr post)
+-   punteggi ad un test sull’ansia in condizioni normali (anx base), prima del test (anx pre) e dopo il test (anx post)
 
 # CSS (extra)
 
 ## Cos'è un file CSS?
 
-- CSS (Cascading Style Sheets) è un linguaggio usato la formattazione di un documento scritto in HTML (utilizzabile anche per revealjs).
+-   CSS (Cascading Style Sheets) è un linguaggio usato la formattazione di un documento scritto in HTML (utilizzabile anche per revealjs).
 
-- I file CSS hanno estensione .css e contengono regole di stile applicabili agli elementi HTML.
+-   I file CSS hanno estensione .css e contengono regole di stile applicabili agli elementi HTML.
 
-- Permette di separare il contenuto dalla presentazione dalle parti di formattazione, migliorando la manutenibilità del codice.
+-   Permette di separare il contenuto dalla presentazione dalle parti di formattazione, migliorando la manutenibilità del codice.
 
 Come inserirlo nel file quarto:
 
-```
+```         
 format:
   html:
     css: stile.css
@@ -456,7 +440,7 @@ format:
 
 Il file .css è come un foglio di testo dove inserire i parametri di formattazione del vostro file html. Un brevissimo esempio:
 
-```
+```         
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -475,8 +459,3 @@ h1 {
 
 ::: {#refs custom-style="Bibliography"}
 :::
-
-
-
-
-
