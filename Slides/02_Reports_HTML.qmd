@@ -13,6 +13,8 @@ format:
     documentclass: "apa7"
     slide-number: c/t
     embed-resourses: true
+    self-contained-math: true
+    self-contained: true
     code-fold: false
     code-summary: "Show code"
     code-overflow: wrap
